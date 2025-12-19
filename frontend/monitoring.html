@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring - LABTANAM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/sophisticated-colors.css">
+    <link rel="stylesheet" href="assets/css/enhanced-ui.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Enhanced Monitoring Dashboard Palette (Better Contrast)
+                        primary: '#1e293b', // Slate 800 - strong contrast, professional
+                        secondary: '#475569', // Slate 600 - readable secondary
+                        accent: '#0f766e', // Teal 700 - subtle accent with good contrast
+                        success: '#059669', // Emerald 600 - clear success indication
+                        info: '#0369a1', // Sky 700 - informational with contrast
+                        warning: '#ca8a04', // Yellow 600 - warning visibility
+                        danger: '#dc2626', // Red 600 - clear danger indication
+
+                        // Monitoring Specific Colors (High Contrast)
+                        'monitor-primary': '#1e40af', // Blue 800 - strong monitoring color
+                        'monitor-secondary': '#0f766e', // Teal 700 - readable secondary
+                        'monitor-accent': '#7c3aed', // Violet 600 - advanced features
+                        'monitor-success': '#059669', // Emerald 600 - healthy status
+                        'monitor-warning': '#ca8a04', // Yellow 600 - clear caution
+                        'monitor-danger': '#dc2626', // Red 600 - critical alerts
+
+                        // Data Visualization Colors (High Contrast)
+                        'chart-blue': '#1e40af', // Blue 800 - temperature
+                        'chart-green': '#059669', // Emerald 600 - pH levels
+                        'chart-purple': '#7c3aed', // Violet 600 - nutrients
+                        'chart-orange': '#ea580c', // Orange 600 - light levels
+                        'chart-cyan': '#0891b2', // Cyan 600 - humidity
+                        'chart-pink': '#db2777', // Pink 600 - growth rate
+
+                        // Enhanced Text Colors (Better Readability)
+                        'text-primary': '#0f172a', // Slate 900 - maximum contrast
+                        'text-secondary': '#334155', // Slate 700 - strong secondary
+                        'text-muted': '#475569', // Slate 600 - readable muted
+                        'text-on-dark': '#f8fafc', // Slate 50 - text on dark backgrounds
+                        'border-light': '#cbd5e1', // Slate 300 - visible borders
+                        'bg-subtle': '#f1f5f9', // Slate 100 - subtle backgrounds
+                        'bg-gradient-start': '#e0f2fe', // Sky 100 - gradient start
+                        'bg-gradient-end': '#ecfdf5', // Green 100 - gradient end
+
+                        // Logo and Brand Colors (High Visibility)
+                        'brand-primary': '#059669', // Emerald 600 - main brand
+                        'brand-secondary': '#0f766e', // Teal 700 - secondary brand
+                        'logo-text': '#0f172a', // Slate 900 - logo text
+                        'logo-accent': '#059669', // Emerald 600 - logo accent
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.3s ease-out',
+                        'bounce-gentle': 'bounceGentle 2s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out',
+                        'pop-in': 'popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-white min-h-screen page-monitoring">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 fade-in-down">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 ">
+                        <a href="index.html" class="flex items-center text-2xl font-bold text-logo-text">
+                            <img src="assets/logo.jpg" alt="LABTANAM Logo"
+                                class="w-10 h-10 mr-3 rounded-lg object-cover shadow-md">
+                            <span class="text-reveal">LABTANAM</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="index.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50  ">
+                        <i class="fas fa-home mr-1"></i>Beranda
+                    </a>
+                    <a href="edukasi.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50  ">
+                        <i class="fas fa-graduation-cap mr-1"></i>Edukasi
+                    </a>
+                    <a href="monitoring.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50  text-primary font-medium border-b-2 border-primary pb-1">
+                        <i class="fas fa-chart-line mr-1"></i>Monitoring
+                    </a>
+                    <a href="chatbot.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50  ">
+                        <i class="fas fa-robot mr-1"></i>ChatBot AI
+                    </a>
+                    <a href="komunitas.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50  ">
+                        <i class="fas fa-users mr-1"></i>Komunitas
+                    </a>
+                    <a href="produk.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50">
+                        <i class="fas fa-shopping-bag mr-1"></i>Produk
+                    </a>
+                </div>
+                </button>
+            </div>
+        </div>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Enhanced Monitoring Dashboard Header -->
+    <section
+        class="relative bg-gradient-to-br from-monitor-primary via-monitor-secondary to-monitor-accent text-text-on-dark py-16 sm:py-20 lg:py-24 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=" 80" height="80" viewBox="0 0 80 80"
+            xmlns="http://www.w3.org/2000/svg" %3E%3Cg fill="none" fill-rule="evenodd" %3E%3Cg fill="%23ffffff"
+            fill-opacity="0.1" %3E%3Cpath d="M40 40m-20 0a20,20 0 1,1 40,0a20,20 0 1,1 -40,0M40 20v40M20 40h40"
+            /%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+
+        <!-- Floating Dashboard Elements -->
+        <div
+            class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center animate-float">
+            <i class="fas fa-chart-line text-2xl text-white/70"></i>
+        </div>
+        <div
+            class="absolute top-32 right-16 w-16 h-16 bg-monitor-accent/20 rounded-2xl flex items-center justify-center animate-pulse-soft">
+            <i class="fas fa-thermometer-half text-xl text-white/70"></i>
+        </div>
+        <div
+            class="absolute bottom-20 left-20 w-14 h-14 bg-monitor-success/20 rounded-2xl flex items-center justify-center animate-bounce-gentle">
+            <i class="fas fa-leaf text-lg text-white/70"></i>
+        </div>
+        <div
+            class="absolute bottom-32 right-10 w-18 h-18 bg-chart-pink/20 rounded-2xl flex items-center justify-center animate-float">
+            <i class="fas fa-seedling text-xl text-white/70"></i>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto text-center">
+                <!-- Dashboard Header -->
+                <div class="mb-8">
+                    <div
+                        class="inline-flex items-center justify-center w-24 h-24 bg-white/20 backdrop-blur-sm rounded-3xl mb-6 animate-glow">
+                        <i class="fas fa-desktop text-4xl text-white"></i>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight text-white">
+                        <span class="block">Dashboard</span>
+                        <span class="block text-white">Monitoring</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed">
+                        Pantau kondisi real-time tanaman hidroponik Anda dengan teknologi IoT dan analisis data cerdas
+                    </p>
+                </div>
+
+                <!-- Real-time Stats Dashboard -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-6xl mx-auto mb-8 dashboard-stats">
+                    <!-- Temperature Card -->
+                    <div class="dashboard-card-enhanced group stagger-1">
+                        <div
+                            class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-thermometer-half text-orange-400 text-2xl"></i>
+                        </div>
+                        <div class="text-3xl lg:text-4xl font-bold text-white mb-2">24°C</div>
+                        <div class="text-sm lg:text-base text-white/90 font-medium">Suhu Optimal</div>
+                        <div class="w-full bg-white/20 rounded-full h-2 mt-3">
+                            <div class="bg-gradient-to-r from-orange-400 to-yellow-400 h-2 rounded-full progress-bar"
+                                style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <!-- pH Level Card -->
+                    <div class="dashboard-card-enhanced group stagger-2">
+                        <div
+                            class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-flask text-green-400 text-2xl"></i>
+                        </div>
+                        <div class="text-3xl lg:text-4xl font-bold text-white mb-2">6.8</div>
+                        <div class="text-sm lg:text-base text-white/90 font-medium">pH Level</div>
+                        <div class="w-full bg-white/20 rounded-full h-2 mt-3">
+                            <div class="bg-gradient-to-r from-green-400 to-emerald-400 h-2 rounded-full progress-bar"
+                                style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Active Plants Card -->
+                    <div class="dashboard-card-enhanced group stagger-3">
+                        <div
+                            class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-seedling text-emerald-400 text-2xl"></i>
+                        </div>
+                        <div class="text-3xl lg:text-4xl font-bold text-white mb-2">24</div>
+                        <div class="text-sm lg:text-base text-white/90 font-medium">Tanaman Aktif</div>
+                        <div class="w-full bg-white/20 rounded-full h-2 mt-3">
+                            <div class="bg-gradient-to-r from-emerald-400 to-teal-400 h-2 rounded-full progress-bar"
+                                style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <!-- System Health Card -->
+                    <div class="dashboard-card-enhanced group stagger-4">
+                        <div
+                            class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-heartbeat text-cyan-400 text-2xl"></i>
+                        </div>
+                        <div class="text-3xl lg:text-4xl font-bold text-white mb-2">98%</div>
+                        <div class="text-sm lg:text-base text-white/90 font-medium">Kesehatan Sistem</div>
+                        <div class="w-full bg-white/20 rounded-full h-2 mt-3">
+                            <div class="bg-gradient-to-r from-cyan-400 to-blue-400 h-2 rounded-full progress-bar"
+                                style="width: 98%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Action Buttons -->
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <button onclick="addPlant()"
+                        class="bg-gradient-to-r from-monitor-success to-accent text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group">
+                        <i class="fas fa-plus mr-2 group-hover:animate-bounce"></i>Tambah Tanaman
+                    </button>
+                    <button onclick="viewReports()"
+                        class="bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-semibold hover:bg-white/30 hover:scale-105 transition-all duration-300 group">
+                        <i class="fas fa-chart-line mr-2 group-hover:animate-pulse"></i>
+                        <span>Lihat Analisis</span>
+                    </button>
+                    <button class="btn">
+                        <i class="fas fa-lightbulb btn-icon"></i>
+                        <span>Tips Hari Ini</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-4 h-4 bg-white/20 rounded-full animate-bounce"
+            style="animation-delay: 0s;"></div>
+        <div class="absolute top-32 right-16 w-6 h-6 bg-cyan-300/30 rounded-full animate-bounce"
+            style="animation-delay: 0.5s;"></div>
+        <div class="absolute bottom-20 left-20 w-3 h-3 bg-white/20 rounded-full animate-bounce"
+            style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-32 right-10 w-5 h-5 bg-cyan-300/30 rounded-full animate-bounce"
+            style="animation-delay: 1.5s;"></div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="py-12 bg-gradient-to-r from-gray-50 to-blue-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Total Tanaman -->
+                <div class="stats-card-enhanced">
+                    <div class="stats-icon">🌱</div>
+                    <div class="stats-number" id="total-plants">0</div>
+                    <div class="stats-label">Total Tanaman</div>
+                </div>
+
+                <!-- Log Hari Ini -->
+                <div class="stats-card-enhanced">
+                    <div class="stats-icon">📝</div>
+                    <div class="stats-number" id="total-logs">0</div>
+                    <div class="stats-label">Log Hari Ini</div>
+                </div>
+
+                <!-- Sedang Tumbuh -->
+                <div class="stats-card-enhanced">
+                    <div class="stats-icon">🌿</div>
+                    <div class="stats-number" id="active-plants">0</div>
+                    <div class="stats-label">Sedang Tumbuh</div>
+                </div>
+
+                <!-- Siap Panen -->
+                <div class="stats-card-enhanced">
+                    <div class="stats-icon">🥬</div>
+                    <div class="stats-number" id="harvest-ready">0</div>
+                    <div class="stats-label">Siap Panen</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Add New Log Form -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">
+                        <i class="fas fa-plus-circle text-primary mr-2"></i>Tambah Log Baru
+                    </h2>
+
+                    <form id="logbook-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Nama Tanaman</label>
+                            <input type="text" id="plant-name" required
+                                class="form-input-enhanced focus:ring-primary focus:border-primary"
+                                placeholder="Contoh: Selada Hijau">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Jenis Sistem</label>
+                            <select id="system-type" required
+                                class="form-input-enhanced focus:ring-primary focus:border-primary">
+                                <option value="">Pilih Sistem</option>
+                                <option value="NFT">NFT (Nutrient Film Technique)</option>
+                                <option value="DWC">DWC (Deep Water Culture)</option>
+                                <option value="Ebb & Flow">Ebb & Flow</option>
+                                <option value="Drip System">Drip System</option>
+                                <option value="Aeroponik">Aeroponik</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Tanggal Tanam</label>
+                            <input type="date" id="plant-date" required
+                                class="form-input-enhanced focus:ring-primary focus:border-primary">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Status</label>
+                            <select id="plant-status" required
+                                class="form-input-enhanced focus:ring-primary focus:border-primary">
+                                <option value="">Pilih Status</option>
+                                <option value="Benih">Benih</option>
+                                <option value="Kecambah">Kecambah</option>
+                                <option value="Vegetatif">Vegetatif</option>
+                                <option value="Berbunga">Berbunga</option>
+                                <option value="Siap Panen">Siap Panen</option>
+                                <option value="Dipanen">Dipanen</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">pH Air</label>
+                            <input type="number" id="ph-level" step="0.1" min="0" max="14"
+                                class="form-input-enhanced focus:ring-primary focus:border-primary" placeholder="6.5">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">EC/TDS (ppm)</label>
+                            <input type="number" id="ec-level" min="0"
+                                class="form-input-enhanced focus:ring-primary focus:border-primary" placeholder="800">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Catatan</label>
+                            <textarea id="notes" rows="3"
+                                class="form-input-enhanced focus:ring-primary focus:border-primary"
+                                placeholder="Tambahkan catatan perkembangan tanaman..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-success btn-full">
+                            <i class="fas fa-save btn-icon"></i>
+                            <span>Simpan Log</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Logbook History -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-lg shadow-md">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-4 sm:mb-0">
+                                <i class="fas fa-history text-blue-600 mr-2"></i>Riwayat Logbook
+                            </h2>
+                            <div class="flex space-x-2">
+                                <button id="export-btn"
+                                    class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-700">
+                                    <i class="fas fa-download mr-1"></i>Export
+                                </button>
+                                <button id="clear-all-btn"
+                                    class="bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-red-700">
+                                    <i class="fas fa-trash mr-1"></i>Hapus Semua
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Filter & Search -->
+                    <div class="p-6 bg-gray-50 border-b border-gray-200">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <div class="flex-1">
+                                <input type="text" id="search-input"
+                                    class="form-input-enhanced focus:ring-primary focus:border-primary"
+                                    placeholder="Cari berdasarkan nama tanaman...">
+                            </div>
+                            <div>
+                                <select id="status-filter"
+                                    class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                                    <option value="">Semua Status</option>
+                                    <option value="Benih">Benih</option>
+                                    <option value="Kecambah">Kecambah</option>
+                                    <option value="Vegetatif">Vegetatif</option>
+                                    <option value="Berbunga">Berbunga</option>
+                                    <option value="Siap Panen">Siap Panen</option>
+                                    <option value="Dipanen">Dipanen</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Logbook Entries -->
+                    <div id="logbook-entries" class="divide-y divide-gray-200">
+                        <!-- Entries will be inserted here -->
+                    </div>
+
+                    <!-- Empty State -->
+                    <div id="empty-state" class="p-12 text-center">
+                        <div class="text-gray-400 mb-4">
+                            <i class="fas fa-seedling text-6xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-600 mb-2">Belum Ada Log Tanaman</h3>
+                        <p class="text-gray-500">Mulai catat perkembangan tanaman hidroponik Anda dengan menambah log
+                            baru.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tips Section -->
+    <section class="bg-gradient-to-r from-green-50 to-blue-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Tips Monitoring Efektif</h2>
+                <p class="text-xl text-gray-600">Panduan untuk memaksimalkan hasil monitoring tanaman</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-calendar-check text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Catat Rutin</h3>
+                    <p class="text-gray-600">Lakukan pencatatan setiap hari untuk memantau perkembangan tanaman secara
+                        konsisten.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-tint text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Monitor pH & EC</h3>
+                    <p class="text-gray-600">Periksa dan catat nilai pH (6.0-6.5) dan EC (800-1200 ppm) secara teratur.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-camera text-orange-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Dokumentasi Visual</h3>
+                    <p class="text-gray-600">Ambil foto perkembangan tanaman untuk melihat perubahan dari waktu ke
+                        waktu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">🌱 LABTANAM</h3>
+                    <p class="text-gray-400">Platform hidroponik terdepan untuk masa depan pertanian yang berkelanjutan.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Fitur</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="edukasi.html" class="hover:text-white">Edukasi</a></li>
+                        <li><a href="monitoring.html" class="hover:text-white">Monitoring</a></li>
+                        <li><a href="chatbot.html" class="hover:text-white">AI ChatBot</a></li>
+                        <li><a href="komunitas.html" class="hover:text-white">Komunitas</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Dukungan</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white">Panduan</a></li>
+                        <li><a href="#" class="hover:text-white">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 LABTANAM. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Navigation for Mobile -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white backdrop-blur-md border-t border-gray-100 shadow-xl md:hidden z-50"
+        id="bottom-nav">
+        <div class="flex justify-around items-center py-2">
+            <a href="index.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="index">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-home text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Beranda</span>
+            </a>
+            <a href="edukasi.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="edukasi">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-graduation-cap text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Edukasi</span>
+            </a>
+            <a href="monitoring.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300 active"
+                data-page="monitoring">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-chart-line text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Monitor</span>
+            </a>
+            <a href="chatbot.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="chatbot">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-robot text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">AI Chat</span>
+            </a>
+            <a href="komunitas.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="komunitas">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-users text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Komunitas</span>
+            </a>
+            <a href="produk.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="produk">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-shopping-bag text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Produk</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Bottom Navigation -->
+    <script src="js/bottom-nav.js"></script>
+    <script src="js/logbook.js"></script>
+    <!-- Colorful Monitoring Dashboard Styles -->
+    <style>
+        /* Enhanced Pop-up Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceGentle {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @keyframes pulseSoft {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.08);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-15px) rotate(2deg);
+            }
+
+            50% {
+                transform: translateY(-8px) rotate(0deg);
+            }
+
+            75% {
+                transform: translateY(-12px) rotate(-2deg);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
+            }
+
+            100% {
+                box-shadow: 0 0 25px rgba(14, 165, 233, 0.8), 0 0 40px rgba(14, 165, 233, 0.6);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8) rotate(-5deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) translateY(50px);
+            }
+
+            50% {
+                opacity: 0.8;
+                transform: scale(1.1) translateY(-10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Staggered Animation Classes */
+        .stagger-1 {
+            animation-delay: 0.1s;
+        }
+
+        .stagger-2 {
+            animation-delay: 0.2s;
+        }
+
+        .stagger-3 {
+            animation-delay: 0.3s;
+        }
+
+        .stagger-4 {
+            animation-delay: 0.4s;
+        }
+
+        .stagger-5 {
+            animation-delay: 0.5s;
+        }
+
+        .stagger-6 {
+            animation-delay: 0.6s;
+        }
+
+        /* Enhanced Dashboard Cards */
+        .dashboard-card {
+            animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation-fill-mode: both;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Progress Bar Animations */
+        .progress-bar {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(45deg,
+                    rgba(255, 255, 255, 0.3) 25%,
+                    transparent 25%,
+                    transparent 50%,
+                    rgba(255, 255, 255, 0.3) 50%,
+                    rgba(255, 255, 255, 0.3) 75%,
+                    transparent 75%,
+                    transparent);
+            background-size: 20px 20px;
+            animation: moveStripes 1s linear infinite;
+        }
+
+        @keyframes moveStripes {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 20px 20px;
+            }
+        }
+
+        /* Floating Elements Animation */
+        .floating-element {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(2) {
+            animation-delay: -1s;
+        }
+
+        .floating-element:nth-child(3) {
+            animation-delay: -2s;
+        }
+
+        .floating-element:nth-child(4) {
+            animation-delay: -3s;
+        }
+
+        /* Button Hover Effects */
+        .dashboard-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dashboard-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .dashboard-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Bottom Navigation Styles */
+        .bottom-nav-item {
+            min-width: 60px;
+            position: relative;
+            color: #6b7280;
+        }
+
+        .bottom-nav-item.active {
+            color: #1e40af;
+        }
+
+        .bottom-nav-item.active .bottom-nav-icon-container {
+            background: linear-gradient(135deg, #1e40af, #0f766e);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+        }
+
+        .bottom-nav-item.active .bottom-nav-label {
+            color: #1e40af;
+            font-weight: 600;
+        }
+
+        .bottom-nav-icon-container {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: transparent;
+        }
+
+        .bottom-nav-item:not(.active):hover .bottom-nav-icon-container {
+            background: #f3f4f6;
+            transform: translateY(-1px);
+        }
+
+        .bottom-nav-item:not(.active):hover {
+            color: #0ea5e9;
+        }
+
+        /* Active indicator */
+        .bottom-nav-item.active::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background: #0ea5e9;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(14, 165, 233, 0.6);
+        }
+
+        /* Body padding for bottom nav */
+        body {
+            padding-bottom: 80px;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding-bottom: 0;
+            }
+        }
+    </style>
+
+    <script>
+        // Monitoring Page Functions
+        function addPlant() {
+            showNotification('Fitur tambah tanaman akan segera hadir!', 'info');
+        }
+
+        function viewReports() {
+            showNotification('Membuka analisis data...', 'success');
+        }
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg text-white transform translate-x-full transition-transform duration-300`;
+
+            if (type === 'success') {
+                notification.classList.add('bg-success');
+            } else if (type === 'info') {
+                notification.classList.add('bg-info');
+            } else {
+                notification.classList.add('bg-gray-600');
+            }
+
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            // Animate in
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Set default date to today
+        document.getElementById('plant-date').valueAsDate = new Date();
+    </script>
+</body>
+
+</html>

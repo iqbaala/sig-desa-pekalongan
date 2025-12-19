@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk - LABTANAM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/sophisticated-colors.css">
+    <link rel="stylesheet" href="assets/css/enhanced-ui.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10b981', // Emerald 500
+                        secondary: '#3b82f6', // Blue 500
+                        accent: '#f59e0b', // Amber 500
+                        success: '#22c55e', // Green 500
+                        warning: '#eab308', // Yellow 500
+                        danger: '#ef4444', // Red 500
+                        info: '#3b82f6', // Blue 500
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.3s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="flex items-center text-2xl font-bold text-primary">
+                            <img src="assets/logo.jpg" alt="LABTANAM Logo"
+                                class="w-10 h-10 mr-3 rounded-lg object-cover shadow-md">
+                            <span>LABTANAM</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="index.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50">
+                        <i class="fas fa-home mr-1"></i>Beranda
+                    </a>
+                    <a href="edukasi.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50">
+                        <i class="fas fa-graduation-cap mr-1"></i>Edukasi
+                    </a>
+                    <a href="monitoring.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50">
+                        <i class="fas fa-chart-line mr-1"></i>Monitoring
+                    </a>
+                    <a href="chatbot.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50">
+                        <i class="fas fa-robot mr-1"></i>ChatBot AI
+                    </a>
+                    <a href="komunitas.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50">
+                        <i class="fas fa-users mr-1"></i>Komunitas
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-green-600 to-teal-600 text-white py-12 mb-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold mb-4">Semua Produk</h1>
+            <p class="text-xl opacity-90">Solusi lengkap untuk kebutuhan hidroponik Anda</p>
+        </div>
+    </header>
+
+    <!-- Product Grid -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div id="product-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Products will be injected here by JS -->
+        </div>
+    </main>
+
+    <!-- Modal Checkout Detailed -->
+    <div id="checkout-modal"
+        class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black/60 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl transform transition-all scale-100 my-8">
+            <!-- Modal Header -->
+            <div class="border-b border-gray-100 p-6 flex justify-between items-start">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900">Pembayaran</h3>
+                    <p class="text-gray-500 text-sm mt-1">Silakan tinjau pesanan Anda dan lengkapi detail pembayaran di
+                        bawah ini.</p>
+                </div>
+                <button id="close-modal"
+                    class="text-gray-400 hover:text-red-500 transition-colors p-2 rounded-full hover:bg-gray-100">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <div class="p-6 grid md:grid-cols-2 gap-8">
+                <!-- Left Column: Product & Summary -->
+                <div class="space-y-6">
+                    <div id="modal-product-info" class="bg-gray-50 rounded-xl p-4 flex items-start space-x-4">
+                        <!-- Product info injected here -->
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="bg-white border border-gray-100 rounded-xl p-4 shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-3 text-sm uppercase tracking-wide">Ringkasan Pesanan</h4>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between text-gray-600">
+                                <span>Harga Satuan</span>
+                                <span id="summary-price" class="font-medium">Rp 0</span>
+                            </div>
+                            <div class="flex justify-between text-gray-600">
+                                <span>Jumlah</span>
+                                <span id="summary-qty" class="font-medium">1</span>
+                            </div>
+                            <div class="flex justify-between text-gray-600">
+                                <span>Biaya Pengiriman</span>
+                                <span class="text-green-600 font-medium">Gratis</span>
+                            </div>
+                            <div class="border-t border-gray-100 pt-2 mt-2 flex justify-between items-center">
+                                <span class="font-bold text-gray-900">Total Pembayaran</span>
+                                <span id="summary-total" class="font-bold text-primary text-lg">Rp 0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form -->
+                <form id="payment-form" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Nama Lengkap</label>
+                        <div class="relative">
+                            <i class="fas fa-user absolute left-3 top-3 text-gray-400"></i>
+                            <input type="text" required placeholder="Contoh: Budi Santoso"
+                                class="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Alamat Pengiriman</label>
+                        <div class="relative">
+                            <i class="fas fa-map-marker-alt absolute left-3 top-3 text-gray-400"></i>
+                            <textarea required rows="2" placeholder="Alamat lengkap penerima..."
+                                class="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Jumlah</label>
+                            <div class="relative">
+                                <div
+                                    class="flex items-center border border-gray-200 rounded-lg bg-gray-50 overflow-hidden">
+                                    <button type="button" id="qty-minus"
+                                        class="px-3 py-2 hover:bg-gray-200 transition-colors text-gray-600">-</button>
+                                    <input type="number" id="qty-input" value="1" min="1" max="100"
+                                        class="w-full text-center bg-transparent border-none focus:ring-0 p-0 text-gray-800 font-medium appearance-none">
+                                    <button type="button" id="qty-plus"
+                                        class="px-3 py-2 hover:bg-gray-200 transition-colors text-gray-600">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Metode Bayar</label>
+                            <div class="relative">
+                                <i class="fas fa-wallet absolute left-3 top-3 text-gray-400"></i>
+                                <select
+                                    class="w-full pl-10 pr-8 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-primary outline-none appearance-none">
+                                    <option>Transfer Bank</option>
+                                    <option>E-Wallet (OVO/Gopay)</option>
+                                    <option>COD (Bayar di Tempat)</option>
+                                </select>
+                                <i
+                                    class="fas fa-chevron-down absolute right-3 top-3 text-gray-400 text-xs pointer-events-none"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-gradient-to-r from-primary to-green-600 text-white py-3 rounded-lg font-bold hover:shadow-lg hover:scale-[1.02] transition-all duration-300 transform mt-4 flex items-center justify-center">
+                        <span>Bayar Sekarang</span>
+                        <i class="fas fa-arrow-right ml-2 animate-bounce-x"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Secure Badge -->
+            <div
+                class="bg-gray-50 px-6 py-3 rounded-b-2xl border-t border-gray-100 flex items-center justify-center text-xs text-gray-500">
+                <i class="fas fa-lock text-green-500 mr-2"></i>
+                <span class="mr-4">Pembayaran Aman & Terenkripsi </span>
+                <i class="fas fa-shield-alt text-blue-500 mr-2"></i>
+                <span>Garansi Uang Kembali</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notification"
+        class="fixed top-4 right-4 z-50 transform translate-x-full transition-transform duration-300"></div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">🌱 LABTANAM</h3>
+                    <p class="text-gray-400">Platform hidroponik terdepan untuk masa depan pertanian yang berkelanjutan.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Fitur</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="edukasi.html" class="hover:text-white">Edukasi</a></li>
+                        <li><a href="monitoring.html" class="hover:text-white">Monitoring</a></li>
+                        <li><a href="chatbot.html" class="hover:text-white">AI ChatBot</a></li>
+                        <li><a href="komunitas.html" class="hover:text-white">Komunitas</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Dukungan</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white">Panduan</a></li>
+                        <li><a href="#" class="hover:text-white">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 LABTANAM. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/produk.js"></script>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product-card {
+            animation: fadeInUp 0.5s ease-out forwards;
+            opacity: 0;
+        }
+    </style>
+</body>
+
+</html>

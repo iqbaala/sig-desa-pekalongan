@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instruksi Pembayaran - LABTANAM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/sophisticated-colors.css">
+    <link rel="stylesheet" href="assets/css/enhanced-ui.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10b981',
+                        secondary: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <!-- Navbar Simple -->
+    <nav class="bg-white shadow-sm p-4">
+        <div class="max-w-xl mx-auto flex justify-center">
+            <a href="index.html" class="flex items-center text-xl font-bold text-primary">
+                <img src="assets/logo.jpg" alt="Logo" class="w-8 h-8 mr-2 rounded-lg">
+                LABTANAM
+            </a>
+        </div>
+    </nav>
+
+    <main class="flex-grow container mx-auto px-4 py-8 max-w-xl">
+
+        <!-- Timer -->
+        <div class="bg-orange-50 border border-orange-100 rounded-xl p-4 mb-6 text-center">
+            <p class="text-xs text-orange-600 font-bold uppercase tracking-wider mb-1">Selesaikan Pembayaran Dalam</p>
+            <div id="countdown" class="text-3xl font-mono font-bold text-orange-600">00:59:59</div>
+            <p class="text-xs text-orange-400 mt-1">Sebelum pesanan dibatalkan otomatis</p>
+        </div>
+
+        <!-- Total Amount -->
+        <div class="bg-white rounded-xl shadow-sm p-6 mb-6 text-center border border-gray-100">
+            <p class="text-gray-500 text-sm mb-1">Total Pembayaran</p>
+            <h2 id="total-amount" class="text-3xl font-bold text-gray-800">Rp 0</h2>
+            <div id="order-id" class="text-xs text-gray-400 mt-2 font-mono">Order ID: -</div>
+        </div>
+
+        <!-- Payment Details -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 mb-8">
+            <div class="bg-gray-50 p-4 border-b border-gray-100 flex justify-between items-center">
+                <span class="font-bold text-gray-700">Metode Pembayaran</span>
+                <span id="payment-method-badge"
+                    class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded">Bank Transfer</span>
+            </div>
+
+            <div class="p-6">
+                <!-- Instruction Area -->
+                <div id="payment-instruction" class="space-y-6">
+                    <!-- Dynamic Content -->
+                    <div class="animate-pulse flex space-x-4">
+                        <div class="flex-1 space-y-4 py-1">
+                            <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                            <div class="space-y-2">
+                                <div class="h-4 bg-gray-200 rounded"></div>
+                                <div class="h-4 bg-gray-200 rounded w-5/6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action -->
+            <div class="bg-gray-50 p-6 text-center border-t border-gray-100">
+                <button onclick="copyToClipboard()" class="mb-4 text-primary text-sm font-semibold hover:underline">
+                    <i class="far fa-copy mr-1"></i> Salin Nomor Rekening
+                </button>
+                <a href="index.html"
+                    class="block w-full bg-primary text-white py-3 rounded-lg font-bold hover:bg-green-600 transition-colors shadow-md">
+                    Saya Sudah Bayar
+                </a>
+                <a href="produk.html" class="block mt-4 text-gray-500 text-sm hover:text-gray-700">
+                    Belanja Lagi
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/pembayaran.js"></script>
+</body>
+
+</html>

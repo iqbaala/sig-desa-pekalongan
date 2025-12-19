@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komunitas - LABTANAM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/sophisticated-colors.css">
+    <link rel="stylesheet" href="assets/css/enhanced-ui.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Vibrant Community Palette
+                        primary: '#7c3aed', // Violet 600 - community, connection
+                        secondary: '#db2777', // Pink 600 - social, engagement
+                        accent: '#059669', // Emerald 600 - growth, sharing
+                        success: '#10b981', // Emerald 500 - achievements
+                        info: '#0ea5e9', // Sky 500 - information, tips
+                        warning: '#f59e0b', // Amber 500 - attention
+                        danger: '#ef4444', // Red 500 - alerts
+
+                        // Community Specific Colors
+                        'community-primary': '#7c3aed', // Violet 600 - main community color
+                        'community-secondary': '#db2777', // Pink 600 - social interactions
+                        'community-accent': '#059669', // Emerald 600 - growth & sharing
+                        'community-warm': '#f97316', // Orange 500 - friendly, welcoming
+                        'community-cool': '#0ea5e9', // Sky 500 - trust, reliability
+                        'community-success': '#10b981', // Emerald 500 - achievements
+
+                        // Social Media Colors
+                        'whatsapp': '#25d366', // WhatsApp green
+                        'shopee': '#fb6445', // Shopee orange
+                        'instagram': '#e1306c', // Instagram pink
+                        'facebook': '#1877f2', // Facebook blue
+                        'youtube': '#ff0000', // YouTube red
+
+                        // Enhanced Text Colors
+                        'text-primary': '#1e293b', // Slate 800 - main text
+                        'text-secondary': '#475569', // Slate 600 - secondary text
+                        'text-muted': '#64748b', // Slate 500 - muted text
+                        'text-on-dark': '#f8fafc', // Slate 50 - text on dark backgrounds
+                        'border-light': '#e2e8f0', // Slate 200 - light borders
+                        'bg-subtle': '#f8fafc', // Slate 50 - subtle backgrounds
+                        'bg-gradient-start': '#ede9fe', // Violet 100 - gradient start
+                        'bg-gradient-end': '#fce7f3', // Pink 100 - gradient end
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.3s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out',
+                        'pop-in': 'popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'bounce-gentle': 'bounceGentle 2s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                        'float': 'float 4s ease-in-out infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-white min-h-screen page-komunitas">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 fade-in-down">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 ">
+                        <a href="index.html" class="flex items-center text-2xl font-bold text-primary">
+                            <img src="assets/logo.jpg" alt="LABTANAM Logo"
+                                class="w-10 h-10 mr-3 rounded-lg object-cover shadow-md">
+                            <span class="text-reveal">LABTANAM</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="index.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50  ">
+                        <i class="fas fa-home mr-1"></i>Beranda
+                    </a>
+                    <a href="edukasi.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50  ">
+                        <i class="fas fa-graduation-cap mr-1"></i>Edukasi
+                    </a>
+                    <a href="monitoring.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50  ">
+                        <i class="fas fa-chart-line mr-1"></i>Monitoring
+                    </a>
+                    <a href="chatbot.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50  ">
+                        <i class="fas fa-robot mr-1"></i>ChatBot AI
+                    </a>
+                    <a href="komunitas.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50  text-primary font-medium border-b-2 border-primary pb-1">
+                        <i class="fas fa-users mr-1"></i>Komunitas
+                    </a>
+                    <a href="produk.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50  ">
+                        <i class="fas fa-shopping-bag mr-1"></i>Produk
+                    </a>
+                </div>
+                </button>
+            </div>
+        </div>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Vibrant Community Hero Section -->
+    <section
+        class="relative bg-gradient-to-br from-community-primary via-primary to-community-secondary text-white py-16 sm:py-20 lg:py-24 overflow-hidden community-header">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=" 100" height="100" viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg" %3E%3Cg fill="none" fill-rule="evenodd" %3E%3Cg fill="%23ffffff"
+            fill-opacity="0.1" %3E%3Cpath d="M20 20h60v60H20zM30 30h40v40H30zM40 40h20v20H40z"
+            /%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+
+        <!-- Floating Community Elements -->
+        <div
+            class="absolute top-16 left-8 w-20 h-20 bg-white/10 rounded-3xl flex items-center justify-center animate-float floating-element">
+            <i class="fas fa-users text-2xl text-white/70"></i>
+        </div>
+        <div
+            class="absolute top-24 right-12 w-16 h-16 bg-community-accent/20 rounded-3xl flex items-center justify-center animate-pulse-soft floating-element">
+            <i class="fas fa-comments text-xl text-white/70"></i>
+        </div>
+        <div
+            class="absolute bottom-16 left-16 w-14 h-14 bg-community-warm/20 rounded-3xl flex items-center justify-center animate-bounce-gentle floating-element">
+            <i class="fas fa-heart text-lg text-white/70"></i>
+        </div>
+        <div
+            class="absolute bottom-24 right-8 w-18 h-18 bg-community-cool/20 rounded-3xl flex items-center justify-center animate-float floating-element">
+            <i class="fas fa-share-alt text-xl text-white/70"></i>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto text-center">
+                <!-- Community Avatar -->
+                <div class="mb-8 community-avatar">
+                    <div
+                        class="inline-flex items-center justify-center w-28 h-28 bg-white/20 backdrop-blur-sm rounded-full mb-6 animate-scale-in relative">
+                        <i class="fas fa-users text-5xl text-community-accent"></i>
+                        <!-- Active indicator -->
+                        <div
+                            class="absolute -top-1 -right-1 w-8 h-8 bg-community-success rounded-full flex items-center justify-center animate-pulse">
+                            <i class="fas fa-heart text-white text-sm"></i>
+                        </div>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight text-white">
+                        <span class="block">Komunitas</span>
+                        <span
+                            class="block bg-gradient-to-r from-community-accent to-community-success bg-clip-text text-transparent">LABTANAM</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed">
+                        Bergabunglah dengan ribuan petani hidroponik Indonesia untuk berbagi pengalaman dan pengetahuan
+                    </p>
+                </div>
+
+                <!-- Vibrant Community Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 max-w-5xl mx-auto mb-8 community-stats">
+                    <div
+                        class="bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group community-stat stagger-1">
+                        <div
+                            class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-users text-community-accent text-xl"></i>
+                        </div>
+                        <div class="text-2xl lg:text-3xl font-bold text-white mb-1">15K+</div>
+                        <div class="text-sm text-white/90 font-medium">Anggota Aktif</div>
+                    </div>
+
+                    <div
+                        class="bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group community-stat stagger-2">
+                        <div
+                            class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-comments text-community-cool text-xl"></i>
+                        </div>
+                        <div class="text-2xl lg:text-3xl font-bold text-white mb-1">2.5K</div>
+                        <div class="text-sm text-white/90 font-medium">Diskusi</div>
+                    </div>
+
+                    <div
+                        class="bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group community-stat stagger-3">
+                        <div
+                            class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-lightbulb text-community-warm text-xl"></i>
+                        </div>
+                        <div class="text-2xl lg:text-3xl font-bold text-white mb-1">850</div>
+                        <div class="text-sm text-white/90 font-medium">Tips Dibagikan</div>
+                    </div>
+
+                    <div
+                        class="bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group community-stat stagger-4">
+                        <div
+                            class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-star text-yellow-300 text-xl"></i>
+                        </div>
+                        <div class="text-2xl lg:text-3xl font-bold text-white mb-1">98%</div>
+                        <div class="text-sm text-white/90 font-medium">Kepuasan</div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center community-actions">
+                    <button onclick="joinCommunity()"
+                        class="bg-gradient-to-r from-community-accent to-community-success text-white px-10 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group community-btn stagger-5">
+                        <i class="fas fa-users mr-3 group-hover:animate-bounce"></i>Gabung Komunitas
+                    </button>
+                    <button onclick="browsePosts()"
+                        class="bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 px-10 py-4 rounded-xl font-bold hover:bg-white/30 hover:scale-105 transition-all duration-300 group community-btn stagger-6">
+                        <i class="fas fa-search mr-3 group-hover:animate-pulse"></i>Jelajahi Diskusi
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Community Links -->
+    <section class="py-16 bg-gradient-to-r from-bg-gradient-start to-bg-gradient-end">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-12 community-links-header">
+                <h2 class="text-3xl lg:text-4xl font-bold text-text-primary mb-4">Bergabung dengan Komunitas</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">Pilih platform yang paling nyaman untuk
+                    berinteraksi dengan komunitas LABTANAM</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- WhatsApp Community -->
+                <div
+                    class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-300 group community-card stagger-1">
+                    <div class="bg-gradient-to-br from-green-500 to-green-600 p-8 text-white text-center">
+                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fab fa-whatsapp text-green-500 text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Grup WhatsApp</h3>
+                        <p class="opacity-90">Diskusi real-time dengan sesama petani</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Chat langsung dengan ahli hidroponik</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Sharing foto hasil panen</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Tips dan trik dari pengalaman nyata</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Troubleshooting masalah tanaman</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Info event dan workshop</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-users text-green-600 mr-2"></i>
+                                <span class="font-semibold text-green-800">5,200+ Anggota Aktif</span>
+                            </div>
+                            <p class="text-green-700 text-sm">Komunitas hidroponik terbesar di Indonesia</p>
+                        </div>
+
+                        <a href="https://chat.whatsapp.com/labtanam-community" target="_blank"
+                            class="block w-full bg-gradient-to-r from-whatsapp to-green-600 text-white text-center py-4 px-6 rounded-xl font-bold hover:shadow-lg hover:scale-105 transition-all duration-300 group">
+                            <i class="fab fa-whatsapp mr-2 group-hover:animate-bounce"></i>Gabung Grup WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Shopee Store -->
+                <div
+                    class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-300 group community-card stagger-2">
+                    <div class="bg-gradient-to-br from-orange-500 to-red-500 p-8 text-white text-center">
+                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shopping-cart text-orange-500 text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Toko Shopee</h3>
+                        <p class="opacity-90">Peralatan hidroponik berkualitas</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-orange-500 mr-3"></i>
+                                <span>Nutrisi AB Mix premium</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-orange-500 mr-3"></i>
+                                <span>pH meter dan EC meter akurat</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-orange-500 mr-3"></i>
+                                <span>Sistem hidroponik siap pakai</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-orange-500 mr-3"></i>
+                                <span>Benih unggul dan rockwool</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-orange-500 mr-3"></i>
+                                <span>Gratis konsultasi pembelian</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-6">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-star text-orange-600 mr-2"></i>
+                                <span class="font-semibold text-orange-800">4.9/5 Rating (2.8k+ Review)</span>
+                            </div>
+                            <p class="text-orange-700 text-sm">Trusted seller dengan pengiriman ke seluruh Indonesia</p>
+                        </div>
+
+                        <a href="https://shopee.co.id/labtanam.official" target="_blank"
+                            class="block w-full bg-gradient-to-r from-shopee to-red-600 text-white text-center py-4 px-6 rounded-xl font-bold hover:shadow-lg hover:scale-105 transition-all duration-300 group">
+                            <i class="fas fa-shopping-cart mr-2 group-hover:animate-bounce"></i>Kunjungi Toko Shopee
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Featured Products -->
+    <section class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 products-header">
+                <h2 class="text-3xl lg:text-4xl font-bold text-text-primary mb-4">Produk Unggulan</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">Peralatan hidroponik berkualitas tinggi yang
+                    dipercaya oleh ribuan petani Indonesia</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div
+                    class="bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group product-card stagger-1 border border-gray-100">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-flask text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-text-primary mb-2 group-hover:text-community-primary transition-colors">
+                        Nutrisi AB Mix</h3>
+                    <p class="text-text-muted text-sm mb-4">Nutrisi lengkap untuk semua jenis tanaman hidroponik</p>
+                    <div class="text-community-primary font-bold text-xl mb-2">Rp 45.000</div>
+                    <div class="flex items-center justify-center text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <span class="text-text-muted text-xs ml-2">(4.9)</span>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div
+                    class="bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group product-card stagger-2 border border-gray-100">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-thermometer-half text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-text-primary mb-2 group-hover:text-community-primary transition-colors">pH
+                        Meter Digital</h3>
+                    <p class="text-text-muted text-sm mb-4">Alat ukur pH akurat dengan kalibrasi otomatis</p>
+                    <div class="text-community-primary font-bold text-xl mb-2">Rp 125.000</div>
+                    <div class="flex items-center justify-center text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <span class="text-text-muted text-xs ml-2">(4.8)</span>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div
+                    class="bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group product-card stagger-3 border border-gray-100">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-seedling text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-text-primary mb-2 group-hover:text-community-primary transition-colors">
+                        Starter Kit NFT</h3>
+                    <p class="text-text-muted text-sm mb-4">Sistem NFT komplet untuk 20 tanaman</p>
+                    <div class="text-community-primary font-bold text-xl mb-2">Rp 850.000</div>
+                    <div class="flex items-center justify-center text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <span class="text-text-muted text-xs ml-2">(4.9)</span>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div
+                    class="bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group product-card stagger-4 border border-gray-100">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-sun text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-text-primary mb-2 group-hover:text-community-primary transition-colors">
+                        LED Grow Light</h3>
+                    <p class="text-text-muted text-sm mb-4">Lampu tanam full spectrum 100W hemat listrik</p>
+                    <div class="text-community-primary font-bold text-xl mb-2">Rp 320.000</div>
+                    <div class="flex items-center justify-center text-yellow-400 mb-3">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <span class="text-text-muted text-xs ml-2">(4.7)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="produk.html"
+                    class="inline-block bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                    <i class="fas fa-shopping-bag mr-2"></i>Lihat Semua Produk
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Stats -->
+    <section class="bg-gradient-to-r from-green-600 to-blue-600 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Komunitas dalam Angka</h2>
+                <p class="text-xl opacity-90">Bergabunglah dengan komunitas hidroponik terbesar di Indonesia</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold mb-2">5,200+</div>
+                    <div class="text-green-100">Anggota WhatsApp</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">15,000+</div>
+                    <div class="text-green-100">Followers Shopee</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">2,800+</div>
+                    <div class="text-green-100">Review Positif</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">50+</div>
+                    <div class="text-green-100">Kota Terjangkau</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Cerita Sukses Anggota</h2>
+                <p class="text-xl text-gray-600">Inspirasi dari petani hidroponik yang telah berhasil</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Story 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Budi Santoso</h4>
+                            <p class="text-gray-600 text-sm">Jakarta</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Berkat komunitas LABTANAM, saya berhasil membangun bisnis sayuran
+                        hidroponik dengan omzet 10 juta per bulan. Tips dari grup WhatsApp sangat membantu!"</p>
+                    <div class="flex items-center text-yellow-500">
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                    </div>
+                </div>
+
+                <!-- Story 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Sari Dewi</h4>
+                            <p class="text-gray-600 text-sm">Surabaya</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Sebagai ibu rumah tangga, hidroponik membantu saya menghemat belanja
+                        sayuran dan bahkan bisa dijual ke tetangga. Terima kasih LABTANAM!"</p>
+                    <div class="flex items-center text-yellow-500">
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                    </div>
+                </div>
+
+                <!-- Story 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Ahmad Rizki</h4>
+                            <p class="text-gray-600 text-sm">Bandung</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Dari hobi jadi bisnis! Sekarang saya supply sayuran hidroponik ke 5
+                        restoran di Bandung. Kualitas produk LABTANAM memang terbaik."</p>
+                    <div class="flex items-center text-yellow-500">
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-gradient-to-r from-primary to-secondary text-white py-16">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-4">Siap Bergabung dengan Komunitas?</h2>
+            <p class="text-xl mb-8 opacity-90">Jangan lewatkan kesempatan untuk belajar, berbagi, dan berkembang bersama
+                ribuan petani hidroponik lainnya</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://chat.whatsapp.com/labtanam-community" target="_blank"
+                    class="bg-green-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-600 transition-colors">
+                    <i class="fab fa-whatsapp mr-2"></i>Gabung WhatsApp
+                </a>
+                <a href="https://shopee.co.id/labtanam.official" target="_blank"
+                    class="bg-orange-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                    <i class="fas fa-shopping-cart mr-2"></i>Kunjungi Toko
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">🌱 LABTANAM</h3>
+                    <p class="text-gray-400">Platform hidroponik terdepan untuk masa depan pertanian yang berkelanjutan.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Fitur</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="edukasi.html" class="hover:text-white">Edukasi</a></li>
+                        <li><a href="monitoring.html" class="hover:text-white">Monitoring</a></li>
+                        <li><a href="chatbot.html" class="hover:text-white">AI ChatBot</a></li>
+                        <li><a href="komunitas.html" class="hover:text-white">Komunitas</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Dukungan</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white">Panduan</a></li>
+                        <li><a href="#" class="hover:text-white">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 LABTANAM. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Navigation for Mobile -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white backdrop-blur-md border-t border-gray-100 shadow-xl md:hidden z-50"
+        id="bottom-nav">
+        <div class="flex justify-around items-center py-2">
+            <a href="index.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="index">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-home text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Beranda</span>
+            </a>
+            <a href="edukasi.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="edukasi">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-graduation-cap text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Edukasi</span>
+            </a>
+            <a href="monitoring.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="monitoring">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-chart-line text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Monitor</span>
+            </a>
+            <a href="chatbot.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="chatbot">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-robot text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">AI Chat</span>
+            </a>
+            <a href="komunitas.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300 active"
+                data-page="komunitas">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-users text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Komunitas</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Bottom Navigation -->
+    <script src="js/bottom-nav.js"></script>
+
+    <!-- Clean Professional Styles -->
+    <style>
+        /* Enhanced Community Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8) rotate(-5deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) translateY(50px);
+            }
+
+            50% {
+                opacity: 0.8;
+                transform: scale(1.1) translateY(-10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceGentle {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @keyframes pulseSoft {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.08);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-15px) rotate(2deg);
+            }
+
+            50% {
+                transform: translateY(-8px) rotate(0deg);
+            }
+
+            75% {
+                transform: translateY(-12px) rotate(-2deg);
+            }
+        }
+
+        /* Staggered Animation Classes */
+        .stagger-1 {
+            animation-delay: 0.1s;
+        }
+
+        .stagger-2 {
+            animation-delay: 0.2s;
+        }
+
+        .stagger-3 {
+            animation-delay: 0.3s;
+        }
+
+        .stagger-4 {
+            animation-delay: 0.4s;
+        }
+
+        .stagger-5 {
+            animation-delay: 0.5s;
+        }
+
+        .stagger-6 {
+            animation-delay: 0.6s;
+        }
+
+        /* Community Specific Animations */
+        .community-header {
+            animation: slideUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .community-avatar {
+            animation: scaleIn 0.6s ease-out;
+            animation-fill-mode: both;
+            animation-delay: 0.3s;
+        }
+
+        .community-stat {
+            animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation-fill-mode: both;
+        }
+
+        .community-btn {
+            animation: fadeInUp 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .community-card {
+            animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation-fill-mode: both;
+        }
+
+        .product-card {
+            animation: fadeInUp 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .floating-element {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(2) {
+            animation-delay: -1s;
+        }
+
+        .floating-element:nth-child(3) {
+            animation-delay: -2s;
+        }
+
+        .floating-element:nth-child(4) {
+            animation-delay: -3s;
+        }
+
+        .floating-element:nth-child(5) {
+            animation-delay: -4s;
+        }
+
+        /* Section Headers Animation */
+        .community-links-header {
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+            animation-delay: 0.2s;
+        }
+
+        .products-header {
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+            animation-delay: 0.2s;
+        }
+
+        /* Bottom Navigation Styles */
+        .bottom-nav-item {
+            min-width: 60px;
+            position: relative;
+            color: #6b7280;
+        }
+
+        .bottom-nav-item.active {
+            color: #7c3aed;
+        }
+
+        .bottom-nav-item.active .bottom-nav-icon-container {
+            background: linear-gradient(135deg, #7c3aed, #db2777);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+        }
+
+        .bottom-nav-item.active .bottom-nav-label {
+            color: #7c3aed;
+            font-weight: 600;
+        }
+
+        .bottom-nav-icon-container {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: transparent;
+        }
+
+        .bottom-nav-item:not(.active):hover .bottom-nav-icon-container {
+            background: #f3f4f6;
+            transform: translateY(-1px);
+        }
+
+        .bottom-nav-item:not(.active):hover {
+            color: #1e293b;
+        }
+
+        /* Active indicator */
+        .bottom-nav-item.active::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background: #1e293b;
+            border-radius: 50%;
+        }
+
+        /* Body padding for bottom nav */
+        body {
+            padding-bottom: 80px;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding-bottom: 0;
+            }
+        }
+    </style>
+
+    <script>
+        // Community Page Functions
+        function joinCommunity() {
+            showNotification('Selamat datang di komunitas LABTANAM!', 'success');
+        }
+
+        function browsePosts() {
+            showNotification('Menampilkan diskusi terbaru...', 'info');
+        }
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg text-white transform translate-x-full transition-transform duration-300`;
+
+            if (type === 'success') {
+                notification.classList.add('bg-success');
+            } else if (type === 'info') {
+                notification.classList.add('bg-info');
+            } else {
+                notification.classList.add('bg-gray-600');
+            }
+
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            // Animate in
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+</body >
+</html >

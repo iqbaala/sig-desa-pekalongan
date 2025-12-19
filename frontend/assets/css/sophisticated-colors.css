@@ -1,0 +1,560 @@
+/**
+ * 🎨 LABTANAM Sophisticated Color Psychology System
+ * Colors that are psychologically appealing yet professional
+ */
+
+/* ===== COLOR PSYCHOLOGY VARIABLES ===== */
+:root {
+  /* Primary Green - Growth, Nature, Trust */
+  --primary-50: #f0fdf4;
+  --primary-100: #dcfce7;
+  --primary-200: #bbf7d0;
+  --primary-300: #86efac;
+  --primary-400: #4ade80;
+  --primary-500: #22c55e;   /* Main primary - Fresh, Vibrant Green */
+  --primary-600: #16a34a;   /* Darker - Trust, Stability */
+  --primary-700: #15803d;
+  --primary-800: #166534;
+  --primary-900: #14532d;
+  
+  /* Secondary Blue - Trust, Intelligence, Calm */
+  --secondary-50: #eff6ff;
+  --secondary-100: #dbeafe;
+  --secondary-200: #bfdbfe;
+  --secondary-300: #93c5fd;
+  --secondary-400: #60a5fa;
+  --secondary-500: #3b82f6;   /* Main secondary - Trustworthy Blue */
+  --secondary-600: #2563eb;
+  --secondary-700: #1d4ed8;
+  --secondary-800: #1e40af;
+  --secondary-900: #1e3a8a;
+  
+  /* Accent Orange - Energy, Enthusiasm, Warmth */
+  --accent-50: #fff7ed;
+  --accent-100: #ffedd5;
+  --accent-200: #fed7aa;
+  --accent-300: #fdba74;
+  --accent-400: #fb923c;
+  --accent-500: #f97316;    /* Main accent - Energetic Orange */
+  --accent-600: #ea580c;
+  --accent-700: #c2410c;
+  --accent-800: #9a3412;
+  --accent-900: #7c2d12;
+  
+  /* Success Green - Achievement, Positive */
+  --success-50: #ecfdf5;
+  --success-100: #d1fae5;
+  --success-200: #a7f3d0;
+  --success-300: #6ee7b7;
+  --success-400: #34d399;
+  --success-500: #10b981;   /* Success - Positive Achievement */
+  --success-600: #059669;
+  --success-700: #047857;
+  --success-800: #065f46;
+  --success-900: #064e3b;
+  
+  /* Warning Amber - Attention, Caution */
+  --warning-50: #fffbeb;
+  --warning-100: #fef3c7;
+  --warning-200: #fde68a;
+  --warning-300: #fcd34d;
+  --warning-400: #fbbf24;
+  --warning-500: #f59e0b;   /* Warning - Attention Grabbing */
+  --warning-600: #d97706;
+  --warning-700: #b45309;
+  --warning-800: #92400e;
+  --warning-900: #78350f;
+  
+  /* Error Red - Urgency, Important */
+  --error-50: #fef2f2;
+  --error-100: #fee2e2;
+  --error-200: #fecaca;
+  --error-300: #fca5a5;
+  --error-400: #f87171;
+  --error-500: #ef4444;     /* Error - Clear but not aggressive */
+  --error-600: #dc2626;
+  --error-700: #b91c1c;
+  --error-800: #991b1b;
+  --error-900: #7f1d1d;
+  
+  /* Purple - Creativity, Innovation */
+  --purple-50: #faf5ff;
+  --purple-100: #f3e8ff;
+  --purple-200: #e9d5ff;
+  --purple-300: #d8b4fe;
+  --purple-400: #c084fc;
+  --purple-500: #a855f7;    /* Purple - Creative, Premium */
+  --purple-600: #9333ea;
+  --purple-700: #7c3aed;
+  --purple-800: #6b21a8;
+  --purple-900: #581c87;
+  
+  /* Neutral Grays - Balance, Sophistication */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;      /* Neutral - Professional */
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  
+  /* Sophisticated Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  --gradient-secondary: linear-gradient(135deg, var(--secondary-500), var(--secondary-600));
+  --gradient-accent: linear-gradient(135deg, var(--accent-500), var(--accent-600));
+  --gradient-success: linear-gradient(135deg, var(--success-500), var(--success-600));
+  --gradient-warm: linear-gradient(135deg, var(--primary-500), var(--accent-500));
+  --gradient-cool: linear-gradient(135deg, var(--secondary-500), var(--purple-500));
+  --gradient-nature: linear-gradient(135deg, var(--primary-400), var(--success-500));
+  
+  /* Sophisticated Shadows */
+  --shadow-primary: 0 4px 14px 0 rgba(34, 197, 94, 0.15);
+  --shadow-secondary: 0 4px 14px 0 rgba(59, 130, 246, 0.15);
+  --shadow-accent: 0 4px 14px 0 rgba(249, 115, 22, 0.15);
+  --shadow-success: 0 4px 14px 0 rgba(16, 185, 129, 0.15);
+  --shadow-warning: 0 4px 14px 0 rgba(245, 158, 11, 0.15);
+  --shadow-error: 0 4px 14px 0 rgba(239, 68, 68, 0.15);
+  --shadow-purple: 0 4px 14px 0 rgba(168, 85, 247, 0.15);
+  
+  /* Text Colors - Optimized Contrast */
+  --text-primary: var(--gray-900);
+  --text-secondary: var(--gray-700);
+  --text-muted: var(--gray-500);
+  --text-light: var(--gray-400);
+  --text-on-primary: #ffffff;
+  --text-on-secondary: #ffffff;
+  --text-on-accent: #ffffff;
+  --text-on-dark: #ffffff;
+  --text-on-light: var(--gray-900);
+}
+
+/* ===== SOPHISTICATED BUTTON SYSTEM ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  min-height: 2.75rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Focus States - Enhanced for accessibility */
+.btn:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+}
+
+/* ===== PRIMARY BUTTONS - Growth & Trust ===== */
+.btn-primary {
+  background: var(--gradient-primary);
+  color: var(--text-on-primary);
+  box-shadow: var(--shadow-primary);
+  border-color: var(--primary-600);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+  box-shadow: 0 8px 25px 0 rgba(34, 197, 94, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-primary);
+}
+
+/* ===== SECONDARY BUTTONS - Trust & Intelligence ===== */
+.btn-secondary {
+  background: var(--gradient-secondary);
+  color: var(--text-on-secondary);
+  box-shadow: var(--shadow-secondary);
+  border-color: var(--secondary-600);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, var(--secondary-600), var(--secondary-700));
+  box-shadow: 0 8px 25px 0 rgba(59, 130, 246, 0.25);
+  transform: translateY(-2px);
+}
+
+/* ===== ACCENT BUTTONS - Energy & Enthusiasm ===== */
+.btn-accent {
+  background: var(--gradient-accent);
+  color: var(--text-on-accent);
+  box-shadow: var(--shadow-accent);
+  border-color: var(--accent-600);
+}
+
+.btn-accent:hover {
+  background: linear-gradient(135deg, var(--accent-600), var(--accent-700));
+  box-shadow: 0 8px 25px 0 rgba(249, 115, 22, 0.25);
+  transform: translateY(-2px);
+}
+
+/* ===== SUCCESS BUTTONS - Achievement ===== */
+.btn-success {
+  background: var(--gradient-success);
+  color: var(--text-on-primary);
+  box-shadow: var(--shadow-success);
+  border-color: var(--success-600);
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, var(--success-600), var(--success-700));
+  box-shadow: 0 8px 25px 0 rgba(16, 185, 129, 0.25);
+  transform: translateY(-2px);
+}
+
+/* ===== WARNING BUTTONS - Attention ===== */
+.btn-warning {
+  background: var(--gradient-warm);
+  color: var(--text-on-accent);
+  box-shadow: var(--shadow-warning);
+  border-color: var(--warning-600);
+}
+
+.btn-warning:hover {
+  background: linear-gradient(135deg, var(--warning-600), var(--warning-700));
+  box-shadow: 0 8px 25px 0 rgba(245, 158, 11, 0.25);
+  transform: translateY(-2px);
+}
+
+/* ===== ERROR BUTTONS - Urgency ===== */
+.btn-error {
+  background: linear-gradient(135deg, var(--error-500), var(--error-600));
+  color: var(--text-on-primary);
+  box-shadow: var(--shadow-error);
+  border-color: var(--error-600);
+}
+
+.btn-error:hover {
+  background: linear-gradient(135deg, var(--error-600), var(--error-700));
+  box-shadow: 0 8px 25px 0 rgba(239, 68, 68, 0.25);
+  transform: translateY(-2px);
+}
+
+/* ===== PURPLE BUTTONS - Creativity & Premium ===== */
+.btn-purple {
+  background: linear-gradient(135deg, var(--purple-500), var(--purple-600));
+  color: var(--text-on-primary);
+  box-shadow: var(--shadow-purple);
+  border-color: var(--purple-600);
+}
+
+.btn-purple:hover {
+  background: linear-gradient(135deg, var(--purple-600), var(--purple-700));
+  box-shadow: 0 8px 25px 0 rgba(168, 85, 247, 0.25);
+  transform: translateY(-2px);
+}
+
+/* ===== OUTLINE BUTTONS - Sophisticated ===== */
+.btn-outline {
+  background: transparent;
+  color: var(--primary-600);
+  border-color: var(--primary-500);
+  box-shadow: 0 2px 8px 0 rgba(34, 197, 94, 0.1);
+}
+
+.btn-outline:hover {
+  background: var(--gradient-primary);
+  color: var(--text-on-primary);
+  box-shadow: var(--shadow-primary);
+  transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+  background: transparent;
+  color: var(--secondary-600);
+  border-color: var(--secondary-500);
+  box-shadow: 0 2px 8px 0 rgba(59, 130, 246, 0.1);
+}
+
+.btn-outline-secondary:hover {
+  background: var(--gradient-secondary);
+  color: var(--text-on-secondary);
+  box-shadow: var(--shadow-secondary);
+  transform: translateY(-2px);
+}
+
+/* ===== SOFT BUTTONS - Gentle Appeal ===== */
+.btn-soft {
+  background: var(--primary-50);
+  color: var(--primary-700);
+  border-color: var(--primary-200);
+  box-shadow: 0 2px 8px 0 rgba(34, 197, 94, 0.08);
+}
+
+.btn-soft:hover {
+  background: var(--primary-100);
+  color: var(--primary-800);
+  box-shadow: 0 4px 12px 0 rgba(34, 197, 94, 0.15);
+  transform: translateY(-1px);
+}
+
+.btn-soft-secondary {
+  background: var(--secondary-50);
+  color: var(--secondary-700);
+  border-color: var(--secondary-200);
+  box-shadow: 0 2px 8px 0 rgba(59, 130, 246, 0.08);
+}
+
+.btn-soft-secondary:hover {
+  background: var(--secondary-100);
+  color: var(--secondary-800);
+  box-shadow: 0 4px 12px 0 rgba(59, 130, 246, 0.15);
+  transform: translateY(-1px);
+}
+
+.btn-soft-accent {
+  background: var(--accent-50);
+  color: var(--accent-700);
+  border-color: var(--accent-200);
+  box-shadow: 0 2px 8px 0 rgba(249, 115, 22, 0.08);
+}
+
+.btn-soft-accent:hover {
+  background: var(--accent-100);
+  color: var(--accent-800);
+  box-shadow: 0 4px 12px 0 rgba(249, 115, 22, 0.15);
+  transform: translateY(-1px);
+}
+
+/* ===== GHOST BUTTONS - Minimal Elegance ===== */
+.btn-ghost {
+  background: transparent;
+  color: var(--gray-600);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.btn-ghost:hover {
+  background: var(--gray-100);
+  color: var(--gray-800);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+/* ===== SPECIAL GRADIENT BUTTONS ===== */
+.btn-gradient-warm {
+  background: var(--gradient-warm);
+  color: var(--text-on-primary);
+  border-color: transparent;
+  box-shadow: 0 4px 14px 0 rgba(249, 115, 22, 0.2);
+}
+
+.btn-gradient-warm:hover {
+  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  box-shadow: 0 8px 25px 0 rgba(249, 115, 22, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-gradient-cool {
+  background: var(--gradient-cool);
+  color: var(--text-on-primary);
+  border-color: transparent;
+  box-shadow: 0 4px 14px 0 rgba(168, 85, 247, 0.2);
+}
+
+.btn-gradient-cool:hover {
+  background: linear-gradient(135deg, var(--secondary-600), var(--purple-600));
+  box-shadow: 0 8px 25px 0 rgba(168, 85, 247, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-gradient-nature {
+  background: var(--gradient-nature);
+  color: var(--text-on-primary);
+  border-color: transparent;
+  box-shadow: 0 4px 14px 0 rgba(34, 197, 94, 0.2);
+}
+
+.btn-gradient-nature:hover {
+  background: linear-gradient(135deg, var(--primary-500), var(--success-600));
+  box-shadow: 0 8px 25px 0 rgba(34, 197, 94, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ===== BUTTON SIZES ===== */
+.btn-sm {
+  padding: 0.5rem 1rem;
+  min-height: 2.25rem;
+  font-size: 0.75rem;
+  gap: 0.375rem;
+  border-radius: 0.5rem;
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  min-height: 3.25rem;
+  font-size: 1rem;
+  gap: 0.625rem;
+  border-radius: 1rem;
+}
+
+.btn-xl {
+  padding: 1.25rem 2.5rem;
+  min-height: 3.75rem;
+  font-size: 1.125rem;
+  gap: 0.75rem;
+  border-radius: 1.25rem;
+}
+
+/* ===== ICON SYSTEM ===== */
+.btn-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-sm .btn-icon { width: 0.875rem; height: 0.875rem; }
+.btn-lg .btn-icon { width: 1.25rem; height: 1.25rem; }
+.btn-xl .btn-icon { width: 1.5rem; height: 1.5rem; }
+
+.btn-icon-right { order: 1; }
+
+/* ===== BUTTON LAYOUTS ===== */
+.btn-full { width: 100%; }
+
+.btn-icon-only {
+  padding: 0.75rem;
+  min-width: 2.75rem;
+  gap: 0;
+  border-radius: 0.75rem;
+}
+
+.btn-icon-only.btn-sm {
+  padding: 0.5rem;
+  min-width: 2.25rem;
+  border-radius: 0.5rem;
+}
+
+.btn-icon-only.btn-lg {
+  padding: 1rem;
+  min-width: 3.25rem;
+  border-radius: 1rem;
+}
+
+.btn-icon-only.btn-xl {
+  padding: 1.25rem;
+  min-width: 3.75rem;
+  border-radius: 1.25rem;
+}
+
+/* ===== LOADING STATES ===== */
+.btn.loading {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+}
+
+.btn.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  margin: -0.5rem 0 0 -0.5rem;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-right-color: transparent;
+  animation: btn-spin 0.75s linear infinite;
+}
+
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 640px) {
+  .btn {
+    padding: 0.625rem 1.25rem;
+    min-height: 2.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .btn-sm {
+    padding: 0.5rem 1rem;
+    min-height: 2rem;
+    font-size: 0.75rem;
+  }
+  
+  .btn-lg {
+    padding: 0.875rem 1.75rem;
+    min-height: 3rem;
+    font-size: 0.875rem;
+  }
+  
+  .btn-xl {
+    padding: 1rem 2rem;
+    min-height: 3.25rem;
+    font-size: 1rem;
+  }
+}
+
+/* ===== DARK MODE SUPPORT ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: var(--gray-100);
+    --text-secondary: var(--gray-300);
+    --text-muted: var(--gray-400);
+    --text-light: var(--gray-500);
+    --text-on-light: var(--gray-100);
+  }
+  
+  .btn-ghost {
+    color: var(--gray-300);
+  }
+  
+  .btn-ghost:hover {
+    background: var(--gray-800);
+    color: var(--gray-100);
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+  
+  .btn.loading::after {
+    animation: none;
+  }
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
+  .btn {
+    border-width: 2px;
+  }
+  
+  .btn-ghost {
+    border-color: currentColor;
+  }
+}

@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot AI - LABTANAM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/sophisticated-colors.css">
+    <link rel="stylesheet" href="assets/css/enhanced-ui.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Vibrant ChatBot AI Palette
+                        primary: '#8b5cf6', // Violet 500 - AI, intelligence, creativity
+                        secondary: '#a855f7', // Purple 500 - innovation, technology
+                        accent: '#06b6d4', // Cyan 500 - communication, clarity
+                        success: '#10b981', // Emerald 500 - successful responses
+                        info: '#3b82f6', // Blue 500 - information, help
+                        warning: '#f59e0b', // Amber 500 - alerts, attention
+                        danger: '#ef4444', // Red 500 - errors, problems
+
+                        // ChatBot Specific Colors
+                        'bot-primary': '#8b5cf6', // Violet 500 - main bot color
+                        'bot-secondary': '#a855f7', // Purple 500 - secondary bot
+                        'bot-accent': '#06b6d4', // Cyan 500 - highlights
+                        'bot-success': '#10b981', // Emerald 500 - positive responses
+                        'bot-warm': '#f97316', // Orange 500 - friendly, approachable
+                        'bot-cool': '#6366f1', // Indigo 500 - smart, analytical
+
+                        // Chat Interface Colors
+                        'chat-user': '#3b82f6', // Blue 500 - user messages
+                        'chat-bot': '#8b5cf6', // Violet 500 - bot messages
+                        'chat-bg': '#f8fafc', // Slate 50 - chat background
+                        'chat-input': '#ffffff', // White - input field
+                        'chat-border': '#e5e7eb', // Gray 200 - borders
+                        'chat-hover': '#f3f4f6', // Gray 100 - hover states
+
+                        // Enhanced Text Colors
+                        'text-primary': '#1e293b', // Slate 800 - main text
+                        'text-secondary': '#475569', // Slate 600 - secondary text
+                        'text-muted': '#64748b', // Slate 500 - muted text
+                        'border-light': '#e2e8f0', // Slate 200 - light borders
+                        'bg-subtle': '#f8fafc', // Slate 50 - subtle backgrounds
+                        'bg-gradient-start': '#ddd6fe', // Violet 100 - gradient start
+                        'bg-gradient-end': '#fef3c7', // Amber 100 - gradient end
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.3s ease-out',
+                        'bounce-gentle': 'bounceGentle 2s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out',
+                        'pop-in': 'popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'zoom-in': 'zoomIn 0.5s ease-out',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'typing': 'typing 2s steps(40, end) infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-white min-h-screen page-chatbot">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 fade-in-down">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 ">
+                        <a href="index.html" class="flex items-center text-2xl font-bold text-primary">
+                            <img src="assets/logo.jpg" alt="LABTANAM Logo"
+                                class="w-10 h-10 mr-3 rounded-lg object-cover shadow-md">
+                            <span class="text-reveal">LABTANAM</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="index.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50  ">
+                        <i class="fas fa-home mr-1"></i>Beranda
+                    </a>
+                    <a href="edukasi.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50  ">
+                        <i class="fas fa-graduation-cap mr-1"></i>Edukasi
+                    </a>
+                    <a href="monitoring.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50  ">
+                        <i class="fas fa-chart-line mr-1"></i>Monitoring
+                    </a>
+                    <a href="chatbot.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50  text-primary font-medium border-b-2 border-primary pb-1">
+                        <i class="fas fa-robot mr-1"></i>ChatBot AI
+                    </a>
+                    <a href="komunitas.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50  ">
+                        <i class="fas fa-users mr-1"></i>Komunitas
+                    </a>
+                    <a href="produk.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50">
+                        <i class="fas fa-shopping-bag mr-1"></i>Produk
+                    </a>
+                </div>
+                </button>
+            </div>
+        </div>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Modern ChatBot Header -->
+    <section
+        class="relative bg-gradient-to-br from-bot-primary via-primary to-bot-secondary text-white py-16 sm:py-20 lg:py-24 overflow-hidden chatbot-header">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=" 100" height="100" viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg" %3E%3Cg fill="none" fill-rule="evenodd" %3E%3Cg fill="%23ffffff"
+            fill-opacity="0.1" %3E%3Cpath
+            d="M50 50m-25 0a25,25 0 1,1 50,0a25,25 0 1,1 -50,0M50 25v50M25 50h50M37.5 37.5l25 25M62.5 37.5l-25 25"
+            /%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+
+        <!-- Floating AI Elements -->
+        <div
+            class="absolute top-16 left-8 w-24 h-24 bg-white/10 rounded-3xl flex items-center justify-center animate-float floating-element">
+            <i class="fas fa-robot text-3xl text-white/70"></i>
+        </div>
+        <div
+            class="absolute top-24 right-12 w-20 h-20 bg-bot-accent/20 rounded-3xl flex items-center justify-center animate-pulse-soft floating-element">
+            <i class="fas fa-brain text-2xl text-white/70"></i>
+        </div>
+        <div
+            class="absolute bottom-16 left-16 w-16 h-16 bg-bot-success/20 rounded-3xl flex items-center justify-center animate-bounce-gentle floating-element">
+            <i class="fas fa-comments text-xl text-white/70"></i>
+        </div>
+        <div
+            class="absolute bottom-24 right-8 w-18 h-18 bg-bot-warm/20 rounded-3xl flex items-center justify-center animate-wiggle floating-element">
+            <i class="fas fa-lightbulb text-xl text-white/70"></i>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto text-center">
+                <!-- AI Bot Avatar -->
+                <div class="mb-8 chatbot-avatar">
+                    <div
+                        class="inline-flex items-center justify-center w-32 h-32 bg-white/20 backdrop-blur-sm rounded-full mb-6 animate-glow relative">
+                        <i class="fas fa-robot text-6xl text-bot-accent"></i>
+                        <!-- Typing indicator -->
+                        <div
+                            class="absolute -bottom-2 -right-2 w-8 h-8 bg-bot-success rounded-full flex items-center justify-center animate-pulse">
+                            <div class="flex space-x-1">
+                                <div class="w-1 h-1 bg-white rounded-full animate-bounce"></div>
+                                <div class="w-1 h-1 bg-white rounded-full animate-bounce" style="animation-delay: 0.1s">
+                                </div>
+                                <div class="w-1 h-1 bg-white rounded-full animate-bounce" style="animation-delay: 0.2s">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight">
+                        <span class="block">AI Assistant</span>
+                        <span
+                            class="block bg-gradient-to-r from-bot-accent to-bot-success bg-clip-text text-transparent">Hidroponik</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+                        Tanyakan apa saja tentang hidroponik! AI cerdas siap membantu Anda 24/7 dengan jawaban yang
+                        akurat
+                    </p>
+                </div>
+
+                <!-- AI Capabilities Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-6 max-w-6xl mx-auto mb-8 ai-features">
+                    <div
+                        class="bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group chatbot-feature stagger-1">
+                        <div
+                            class="w-16 h-16 bg-bot-accent/30 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-clock text-bot-accent text-2xl group-hover:animate-spin"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">24/7 Online</h3>
+                        <p class="text-sm text-white/80">Selalu siap membantu kapan saja</p>
+                    </div>
+
+                    <div
+                        class="bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group chatbot-feature stagger-2">
+                        <div
+                            class="w-16 h-16 bg-bot-success/30 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-brain text-bot-success text-2xl group-hover:animate-pulse"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">AI Cerdas</h3>
+                        <p class="text-sm text-white/80">Dilatih dengan data ahli pertanian</p>
+                    </div>
+
+                    <div
+                        class="bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group chatbot-feature stagger-3">
+                        <div
+                            class="w-16 h-16 bg-bot-warm/30 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-seedling text-bot-warm text-2xl group-hover:animate-bounce"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Spesialis</h3>
+                        <p class="text-sm text-white/80">Fokus pada budidaya hidroponik</p>
+                    </div>
+
+                    <div
+                        class="bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group chatbot-feature stagger-4">
+                        <div
+                            class="w-16 h-16 bg-bot-cool/30 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-comments text-bot-cool text-2xl group-hover:animate-wiggle"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Interaktif</h3>
+                        <p class="text-sm text-white/80">Percakapan natural dan mudah</p>
+                    </div>
+                </div>
+
+                <!-- Quick Start Buttons -->
+                <div class="flex flex-wrap gap-4 justify-center mb-8 quick-actions">
+                    <button onclick="startQuickChat('nutrisi')"
+                        class="bg-gradient-to-r from-bot-success to-accent text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group quick-btn stagger-5">
+                        <i class="fas fa-flask mr-2 group-hover:animate-bounce"></i>Tanya Nutrisi
+                    </button>
+                    <button onclick="startQuickChat('penyakit')"
+                        class="bg-gradient-to-r from-bot-warm to-warning text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group quick-btn stagger-6">
+                        <i class="fas fa-bug mr-2 group-hover:animate-bounce"></i>Masalah Tanaman
+                    </button>
+                    <button onclick="startQuickChat('setup')"
+                        class="bg-gradient-to-r from-bot-cool to-info text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group quick-btn stagger-7">
+                        <i class="fas fa-cog mr-2 group-hover:animate-bounce"></i>Setup Sistem
+                    </button>
+                </div>
+
+                <!-- Main CTA -->
+                <div class="main-cta">
+                    <button onclick="startChat()"
+                        class="bg-gradient-to-r from-bot-primary to-bot-secondary text-white px-12 py-5 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 group relative overflow-hidden">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-comments mr-3 group-hover:animate-bounce"></i>
+                            Mulai Chat dengan AI
+                        </span>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Chat Interface -->
+    <section class="bg-gradient-to-r from-bg-gradient-start to-bg-gradient-end py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Chat Container -->
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden chat-container">
+                <!-- Chat Header -->
+                <div class="bg-gradient-to-r from-bot-primary to-bot-secondary text-white p-6 chat-header">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-robot text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">AI Hidroponik Assistant</h3>
+                                <div class="flex items-center text-sm text-white/80">
+                                    <div class="w-2 h-2 bg-bot-success rounded-full mr-2 animate-pulse"></div>
+                                    Online - Siap membantu
+                                </div>
+                            </div>
+                        </div>
+                        <button class="text-white/80 hover:text-white transition-colors">
+                            <i class="fas fa-cog text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Chat Messages Area -->
+                <div class="h-96 overflow-y-auto p-6 space-y-4 chat-messages" id="chat-messages">
+                    <!-- Welcome Message -->
+                    <div class="flex items-start space-x-3 message-bot animate-fade-in-up">
+                        <div class="w-8 h-8 bg-bot-primary rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-robot text-white text-sm"></i>
+                        </div>
+                        <div class="bg-chat-bg rounded-2xl rounded-tl-sm p-4 max-w-xs">
+                            <p class="text-text-primary">Halo! 👋 Saya AI Assistant untuk hidroponik. Ada yang bisa saya
+                                bantu hari ini?</p>
+                        </div>
+                    </div>
+
+                    <!-- Sample User Message -->
+                    <div class="flex items-start space-x-3 justify-end message-user animate-fade-in-up"
+                        style="animation-delay: 0.5s;">
+                        <div class="bg-chat-user text-white rounded-2xl rounded-tr-sm p-4 max-w-xs">
+                            <p>Bagaimana cara mengatasi daun yang menguning?</p>
+                        </div>
+                        <div class="w-8 h-8 bg-chat-user rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-user text-white text-sm"></i>
+                        </div>
+                    </div>
+
+                    <!-- Typing Indicator -->
+                    <div class="flex items-start space-x-3 typing-indicator animate-fade-in-up"
+                        style="animation-delay: 1s;">
+                        <div class="w-8 h-8 bg-bot-primary rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-robot text-white text-sm"></i>
+                        </div>
+                        <div class="bg-chat-bg rounded-2xl rounded-tl-sm p-4">
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-text-muted rounded-full animate-bounce"></div>
+                                <div class="w-2 h-2 bg-text-muted rounded-full animate-bounce"
+                                    style="animation-delay: 0.1s"></div>
+                                <div class="w-2 h-2 bg-text-muted rounded-full animate-bounce"
+                                    style="animation-delay: 0.2s"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Input -->
+                <div class="p-6 border-t border-chat-border chat-input-container">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-1 relative">
+                            <input type="text" id="chat-input" placeholder="Ketik pertanyaan Anda tentang hidroponik..."
+                                class="w-full px-4 py-3 rounded-2xl border border-chat-border focus:border-bot-primary focus:ring-2 focus:ring-bot-primary/20 outline-none transition-all duration-200">
+                            <button
+                                class="absolute right-2 top-1/2 transform -translate-y-1/2 text-text-muted hover:text-bot-primary transition-colors">
+                                <i class="fas fa-smile text-xl"></i>
+                            </button>
+                        </div>
+                        <button onclick="sendMessage()"
+                            class="bg-gradient-to-r from-bot-primary to-bot-secondary text-white p-3 rounded-2xl hover:scale-105 transition-all duration-200 shadow-lg">
+                            <i class="fas fa-paper-plane text-xl"></i>
+                        </button>
+                    </div>
+
+                    <!-- Quick Reply Suggestions -->
+                    <div class="flex flex-wrap gap-2 mt-4 quick-replies">
+                        <button onclick="quickReply('Nutrisi tanaman')"
+                            class="bg-chat-hover text-text-secondary px-3 py-1 rounded-full text-sm hover:bg-bot-primary hover:text-white transition-all duration-200">
+                            🧪 Nutrisi tanaman
+                        </button>
+                        <button onclick="quickReply('pH air')"
+                            class="bg-chat-hover text-text-secondary px-3 py-1 rounded-full text-sm hover:bg-bot-primary hover:text-white transition-all duration-200">
+                            💧 pH air
+                        </button>
+                        <button onclick="quickReply('Hama penyakit')"
+                            class="bg-chat-hover text-text-secondary px-3 py-1 rounded-full text-sm hover:bg-bot-primary hover:text-white transition-all duration-200">
+                            🐛 Hama penyakit
+                        </button>
+                        <button onclick="quickReply('Setup hidroponik')"
+                            class="bg-chat-hover text-text-secondary px-3 py-1 rounded-full text-sm hover:bg-bot-primary hover:text-white transition-all duration-200">
+                            ⚙️ Setup hidroponik
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    </div>
+    </div>
+
+    <!-- Floating Elements -->
+    <div class="absolute top-20 left-10 w-4 h-4 bg-white/20 rounded-full animate-bounce" style="animation-delay: 0s;">
+    </div>
+    <div class="absolute top-32 right-16 w-6 h-6 bg-pink-300/30 rounded-full animate-bounce"
+        style="animation-delay: 0.5s;"></div>
+    <div class="absolute bottom-20 left-20 w-3 h-3 bg-white/20 rounded-full animate-bounce"
+        style="animation-delay: 1s;"></div>
+    <div class="absolute bottom-32 right-10 w-5 h-5 bg-pink-300/30 rounded-full animate-bounce"
+        style="animation-delay: 1.5s;"></div>
+    </section>
+
+    <!-- Chat Interface -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <!-- Chat Header -->
+            <div class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white p-4">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-3">
+                        <i class="fas fa-robot text-purple-600 text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">AI Hidroponik Assistant</h3>
+                        <p class="text-sm opacity-90">Online - Siap membantu Anda</p>
+                    </div>
+                    <div class="ml-auto">
+                        <button id="clear-chat"
+                            class="bg-white bg-opacity-20 hover:bg-opacity-30 px-3 py-1 rounded text-sm transition-colors">
+                            <i class="fas fa-trash mr-1"></i>Hapus Chat
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div id="chat-messages" class="h-96 overflow-y-auto p-6 space-y-4">
+                <!-- Welcome Message -->
+                <div class="flex items-start">
+                    <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                        <i class="fas fa-robot text-white text-sm"></i>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-3 max-w-xs lg:max-w-md">
+                        <p class="text-gray-800">
+                            Halo! Saya AI Assistant untuk hidroponik. Saya bisa membantu Anda dengan:
+                            <br>• Masalah nutrisi dan pH
+                            <br>• Pemilihan tanaman
+                            <br>• Sistem hidroponik
+                            <br>• Diagnosis penyakit tanaman
+                            <br><br>Silakan tanyakan apa saja! 🌱
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="border-t border-gray-200 p-4">
+                <form id="chat-form" class="flex space-x-3">
+                    <input type="text" id="chat-input" class="form-input-enhanced flex-1"
+                        placeholder="Ketik pertanyaan Anda tentang hidroponik..." autocomplete="off">
+                    <button type="submit" id="send-button" class="btn btn-gradient-cool btn-icon-only">
+                        <i class="fas fa-paper-plane btn-icon"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Quick Questions -->
+        <div class="mt-8">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">Pertanyaan Cepat</h3>
+            <div class="grid md:grid-cols-2 gap-3">
+                <button
+                    class="quick-question bg-white border border-gray-200 rounded-lg p-3 text-left hover:bg-gray-50 transition-colors">
+                    <i class="fas fa-tint text-blue-500 mr-2"></i>
+                    Bagaimana cara mengatur pH air yang ideal?
+                </button>
+                <button
+                    class="quick-question bg-white border border-gray-200 rounded-lg p-3 text-left hover:bg-gray-50 transition-colors">
+                    <i class="fas fa-leaf text-green-500 mr-2"></i>
+                    Tanaman saya layu, apa penyebabnya?
+                </button>
+                <button
+                    class="quick-question bg-white border border-gray-200 rounded-lg p-3 text-left hover:bg-gray-50 transition-colors">
+                    <i class="fas fa-seedling text-yellow-500 mr-2"></i>
+                    Sistem hidroponik mana yang cocok untuk pemula?
+                </button>
+                <button
+                    class="quick-question bg-white border border-gray-200 rounded-lg p-3 text-left hover:bg-gray-50 transition-colors">
+                    <i class="fas fa-bug text-red-500 mr-2"></i>
+                    Cara mengatasi hama pada tanaman hidroponik?
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="bg-gradient-to-r from-purple-50 to-indigo-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Keunggulan AI Assistant</h2>
+                <p class="text-xl text-gray-600">Teknologi AI terdepan untuk solusi hidroponik</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-brain text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">AI Cerdas</h3>
+                    <p class="text-gray-600">Dilatih dengan data pertanian terkini dan pengalaman ahli hidroponik</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">24/7 Tersedia</h3>
+                    <p class="text-gray-600">Dapatkan bantuan kapan saja tanpa perlu menunggu konsultan</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-language text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Bahasa Indonesia</h3>
+                    <p class="text-gray-600">Komunikasi dalam bahasa Indonesia yang mudah dipahami</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-lightbulb text-yellow-600 text-2xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-lg font-semibold text-yellow-800 mb-2">Tips Menggunakan ChatBot</h3>
+                        <ul class="text-yellow-700 space-y-1">
+                            <li>• Berikan detail spesifik tentang masalah Anda</li>
+                            <li>• Sertakan informasi seperti jenis tanaman, sistem yang digunakan</li>
+                            <li>• Upload foto jika memungkinkan (fitur akan segera hadir)</li>
+                            <li>• Jangan ragu untuk bertanya lanjutan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">🌱 LABTANAM</h3>
+                    <p class="text-gray-400">Platform hidroponik terdepan untuk masa depan pertanian yang berkelanjutan.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Fitur</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="edukasi.html" class="hover:text-white">Edukasi</a></li>
+                        <li><a href="monitoring.html" class="hover:text-white">Monitoring</a></li>
+                        <li><a href="chatbot.html" class="hover:text-white">AI ChatBot</a></li>
+                        <li><a href="komunitas.html" class="hover:text-white">Komunitas</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Dukungan</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white">Panduan</a></li>
+                        <li><a href="#" class="hover:text-white">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 LABTANAM. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Navigation for Mobile -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white backdrop-blur-md border-t border-gray-100 shadow-xl md:hidden z-50"
+        id="bottom-nav">
+        <div class="flex justify-around items-center py-2">
+            <a href="index.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="index">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-home text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Beranda</span>
+            </a>
+            <a href="edukasi.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="edukasi">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-graduation-cap text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Edukasi</span>
+            </a>
+            <a href="monitoring.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="monitoring">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-chart-line text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Monitor</span>
+            </a>
+            <a href="chatbot.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300 active"
+                data-page="chatbot">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-robot text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">AI Chat</span>
+            </a>
+            <a href="komunitas.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="komunitas">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-users text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Komunitas</span>
+            </a>
+            <a href="produk.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="produk">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-shopping-bag text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Produk</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Bottom Navigation -->
+    <script src="js/bottom-nav.js"></script>
+    <script src="js/chatbot.js"></script>
+    <!-- Modern ChatBot Styles -->
+    <style>
+        /* Enhanced ChatBot Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceGentle {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes pulseSoft {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-20px) rotate(3deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(0deg);
+            }
+
+            75% {
+                transform: translateY(-15px) rotate(-3deg);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+            }
+
+            100% {
+                box-shadow: 0 0 30px rgba(139, 92, 246, 0.8), 0 0 45px rgba(139, 92, 246, 0.6);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px) scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8) rotate(-10deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.4) translateY(80px);
+            }
+
+            50% {
+                opacity: 0.8;
+                transform: scale(1.2) translateY(-15px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.6);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes wiggle {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(-3deg);
+            }
+
+            75% {
+                transform: rotate(3deg);
+            }
+        }
+
+        @keyframes typing {
+            0% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.3;
+            }
+        }
+
+        /* Staggered Animation Classes */
+        .stagger-1 {
+            animation-delay: 0.1s;
+        }
+
+        .stagger-2 {
+            animation-delay: 0.2s;
+        }
+
+        .stagger-3 {
+            animation-delay: 0.3s;
+        }
+
+        .stagger-4 {
+            animation-delay: 0.4s;
+        }
+
+        .stagger-5 {
+            animation-delay: 0.5s;
+        }
+
+        .stagger-6 {
+            animation-delay: 0.6s;
+        }
+
+        .stagger-7 {
+            animation-delay: 0.7s;
+        }
+
+        /* ChatBot Specific Animations */
+        .chatbot-header {
+            animation: slideUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .chatbot-avatar {
+            animation: zoomIn 0.6s ease-out;
+            animation-fill-mode: both;
+            animation-delay: 0.3s;
+        }
+
+        .chatbot-feature {
+            animation: popIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation-fill-mode: both;
+        }
+
+        .quick-btn {
+            animation: fadeInUp 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .main-cta {
+            animation: scaleIn 0.8s ease-out;
+            animation-fill-mode: both;
+            animation-delay: 0.8s;
+        }
+
+        .chat-container {
+            animation: slideUp 0.8s ease-out;
+            animation-fill-mode: both;
+            animation-delay: 1s;
+        }
+
+        .floating-element {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(2) {
+            animation-delay: -1s;
+        }
+
+        .floating-element:nth-child(3) {
+            animation-delay: -2s;
+        }
+
+        .floating-element:nth-child(4) {
+            animation-delay: -3s;
+        }
+
+        .floating-element:nth-child(5) {
+            animation-delay: -4s;
+        }
+
+        /* Chat Message Animations */
+        .message-bot {
+            animation: fadeInUp 0.5s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .message-user {
+            animation: fadeInUp 0.5s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .typing-indicator {
+            animation: fadeInUp 0.5s ease-out;
+            animation-fill-mode: both;
+        }
+
+        /* Chat Interface Enhancements */
+        .chat-messages {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(139, 92, 246, 0.3) transparent;
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: rgba(139, 92, 246, 0.3);
+            border-radius: 3px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: rgba(139, 92, 246, 0.5);
+        }
+
+        /* Quick Reply Buttons Animation */
+        .quick-replies button {
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.4s ease-out forwards;
+        }
+
+        .quick-replies button:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .quick-replies button:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .quick-replies button:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .quick-replies button:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        /* Bottom Navigation Styles */
+        .bottom-nav-item {
+            min-width: 60px;
+            position: relative;
+            color: #6b7280;
+        }
+
+        .bottom-nav-item.active {
+            color: #8b5cf6;
+        }
+
+        .bottom-nav-item.active .bottom-nav-icon-container {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+
+        .bottom-nav-item.active .bottom-nav-label {
+            color: #8b5cf6;
+            font-weight: 600;
+        }
+
+        .bottom-nav-icon-container {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: transparent;
+        }
+
+        .bottom-nav-item:not(.active):hover .bottom-nav-icon-container {
+            background: #f3f4f6;
+            transform: translateY(-1px);
+        }
+
+        .bottom-nav-item:not(.active):hover {
+            color: #1e293b;
+        }
+
+        /* Active indicator */
+        .bottom-nav-item.active::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background: #1e293b;
+            border-radius: 50%;
+        }
+
+        /* Body padding for bottom nav */
+        body {
+            padding-bottom: 80px;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding-bottom: 0;
+            }
+        }
+    </style>
+
+    <script>
+        // Enhanced ChatBot Page Functions
+        function startChat() {
+            showNotification('ChatBot AI siap membantu Anda!', 'success');
+            scrollToChatInterface();
+        }
+
+        function startQuickChat(topic) {
+            const topicMessages = {
+                'nutrisi': 'Saya ingin bertanya tentang nutrisi hidroponik. Bisa bantu saya?',
+                'penyakit': 'Tanaman saya ada masalah. Bisa diagnosa penyakitnya?',
+                'setup': 'Saya ingin setup sistem hidroponik. Bagaimana caranya?'
+            };
+
+            const message = topicMessages[topic] || 'Halo, saya butuh bantuan tentang hidroponik.';
+            document.getElementById('chat-input').value = message;
+            showNotification(`Memulai chat tentang ${topic}`, 'info');
+            scrollToChatInterface();
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+
+            if (message) {
+                addUserMessage(message);
+                input.value = '';
+
+                // Simulate AI response
+                setTimeout(() => {
+                    addBotMessage(generateAIResponse(message));
+                }, 1000);
+            }
+        }
+
+        function quickReply(message) {
+            document.getElementById('chat-input').value = message;
+            sendMessage();
+        }
+
+        function addUserMessage(message) {
+            const chatMessages = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'flex items-start space-x-3 justify-end message-user animate-fade-in-up';
+            messageDiv.innerHTML = `
+                <div class="bg-chat-user text-white rounded-2xl rounded-tr-sm p-4 max-w-xs">
+                    <p>${message}</p>
+                </div>
+                <div class="w-8 h-8 bg-chat-user rounded-full flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-user text-white text-sm"></i>
+                </div>
+            `;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function addBotMessage(message) {
+            const chatMessages = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'flex items-start space-x-3 message-bot animate-fade-in-up';
+            messageDiv.innerHTML = `
+                <div class="w-8 h-8 bg-bot-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-robot text-white text-sm"></i>
+                </div>
+                <div class="bg-chat-bg rounded-2xl rounded-tl-sm p-4 max-w-xs">
+                    <p class="text-text-primary">${message}</p>
+                </div>
+            `;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function generateAIResponse(userMessage) {
+            const responses = [
+                "Terima kasih atas pertanyaannya! 🌱 Untuk masalah hidroponik, saya sarankan untuk memeriksa pH air terlebih dahulu.",
+                "Itu pertanyaan yang bagus! 💡 Dalam hidroponik, nutrisi yang seimbang sangat penting untuk pertumbuhan optimal.",
+                "Saya akan membantu Anda! 🤖 Berdasarkan pengalaman, masalah tersebut biasanya terkait dengan sirkulasi air.",
+                "Excellent question! 🎯 Untuk setup hidroponik pemula, saya rekomendasikan sistem NFT atau DWC.",
+                "Baik, mari kita analisis masalahnya! 🔍 Bisa Anda ceritakan lebih detail tentang kondisi tanaman saat ini?"
+            ];
+
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+
+        function scrollToChatInterface() {
+            const chatContainer = document.querySelector('.chat-container');
+            if (chatContainer) {
+                chatContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Enter key support for chat input
+        document.addEventListener('DOMContentLoaded', function () {
+            const chatInput = document.getElementById('chat-input');
+            if (chatInput) {
+                chatInput.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+            }
+        });
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg text-white transform translate-x-full transition-transform duration-300`;
+
+            if (type === 'success') {
+                notification.classList.add('bg-success');
+            } else if (type === 'info') {
+                notification.classList.add('bg-info');
+            } else {
+                notification.classList.add('bg-gray-600');
+            }
+
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            // Animate in
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+    </script>
+
+    <script>
+        // Function to start chat with specific topic
+        function startChat(topic) {
+            const messageInput = document.getElementById('message-input');
+            const sendButton = document.getElementById('send-button');
+
+            if (messageInput && sendButton) {
+                messageInput.value = `Saya ingin bertanya tentang ${topic}. Bisa bantu saya?`;
+                sendButton.click();
+                closePopup(); // Close the popup after starting chat
+                showNotification(`Chat dimulai dengan topik: ${topic}`, 'success');
+            }
+        }
+    </script>
+</body>
+
+</html>

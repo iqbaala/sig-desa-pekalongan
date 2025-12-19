@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edukasi - LABTANAM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/sophisticated-colors.css">
+    <link rel="stylesheet" href="assets/css/enhanced-ui.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Colorful Professional Education Palette
+                        primary: '#2563eb', // Blue 600 - trust, knowledge, focus
+                        secondary: '#7c3aed', // Violet 600 - creativity, wisdom
+                        accent: '#059669', // Emerald 600 - growth, success
+                        success: '#10b981', // Emerald 500 - achievement
+                        info: '#0ea5e9', // Sky 500 - information, clarity
+                        warning: '#f59e0b', // Amber 500 - attention, energy
+                        danger: '#ef4444', // Red 500 - important, urgent
+
+                        // Vibrant Learning Colors
+                        'edu-primary': '#3b82f6', // Blue 500 - learning, focus
+                        'edu-secondary': '#8b5cf6', // Violet 500 - creativity
+                        'edu-accent': '#06b6d4', // Cyan 500 - fresh, modern
+                        'edu-success': '#22c55e', // Green 500 - growth
+                        'edu-warm': '#f97316', // Orange 500 - energy, enthusiasm
+                        'edu-cool': '#6366f1', // Indigo 500 - depth, knowledge
+
+                        // Learning Levels - Colorful yet Professional
+                        'level-basic': '#22c55e', // Green 500 - beginner friendly
+                        'level-intermediate': '#3b82f6', // Blue 500 - progressive
+                        'level-advanced': '#8b5cf6', // Violet 500 - advanced
+
+                        // Enhanced Text Colors
+                        'text-primary': '#1e293b', // Slate 800 - main text
+                        'text-secondary': '#475569', // Slate 600 - secondary text
+                        'text-muted': '#64748b', // Slate 500 - muted text
+                        'border-light': '#e2e8f0', // Slate 200 - light borders
+                        'bg-subtle': '#f8fafc', // Slate 50 - subtle backgrounds
+                        'bg-gradient-start': '#dbeafe', // Blue 100 - gradient start
+                        'bg-gradient-end': '#fef3c7', // Amber 100 - gradient end
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.3s ease-out',
+                        'bounce-gentle': 'bounceGentle 1s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out',
+                        'pop-in': 'popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'zoom-in': 'zoomIn 0.5s ease-out'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-white min-h-screen page-edukasi">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 fade-in-down">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 ">
+                        <a href="index.html" class="flex items-center text-2xl font-bold text-primary">
+                            <img src="assets/logo.jpg" alt="LABTANAM Logo"
+                                class="w-10 h-10 mr-3 rounded-lg object-cover shadow-md">
+                            <span class="text-reveal">LABTANAM</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="index.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 ">
+                        <i class="fas fa-home mr-1"></i>Beranda
+                    </a>
+                    <a href="edukasi.html"
+                        class="nav-link text-primary font-medium border-b-2 border-primary pb-1 px-3 py-2 rounded-lg ">
+                        <i class="fas fa-graduation-cap mr-1"></i>Edukasi
+                    </a>
+                    <a href="monitoring.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 ">
+                        <i class="fas fa-chart-line mr-1"></i>Monitoring
+                    </a>
+                    <a href="chatbot.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 ">
+                        <i class="fas fa-robot mr-1"></i>ChatBot AI
+                    </a>
+                    <a href="komunitas.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 ">
+                        <i class="fas fa-users mr-1"></i>Komunitas
+                    </a>
+                    <a href="produk.html"
+                        class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50">
+                        <i class="fas fa-shopping-bag mr-1"></i>Produk
+                    </a>
+                </div>
+                </button>
+            </div>
+        </div>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Colorful Professional Header -->
+    <section
+        class="relative bg-gradient-to-br from-edu-primary via-primary to-edu-secondary text-white py-16 sm:py-20 lg:py-24 overflow-hidden edu-header">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=" 60" height="60" viewBox="0 0 60 60"
+            xmlns="http://www.w3.org/2000/svg" %3E%3Cg fill="none" fill-rule="evenodd" %3E%3Cg fill="%23ffffff"
+            fill-opacity="0.1" %3E%3Ccircle cx="30" cy="30" r="2" /%3E%3Ccircle cx="10" cy="10" r="1" /%3E%3Ccircle
+            cx="50" cy="50" r="1" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full flex items-center justify-center">
+            <i class="fas fa-graduation-cap text-2xl text-white/70"></i>
+        </div>
+        <div class="absolute top-32 right-16 w-16 h-16 bg-edu-accent/20 rounded-full flex items-center justify-center">
+            <i class="fas fa-book text-xl text-white/70"></i>
+        </div>
+        <div
+            class="absolute bottom-20 left-20 w-12 h-12 bg-edu-success/20 rounded-full flex items-center justify-center">
+            <i class="fas fa-leaf text-sm text-white/70"></i>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Colorful Heading -->
+                <div class="mb-8">
+                    <div
+                        class="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6">
+                        <i class="fas fa-seedling text-3xl text-edu-success"></i>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight">
+                        <span class="block">Pusat Edukasi</span>
+                        <span
+                            class="block bg-gradient-to-r from-edu-accent to-edu-success bg-clip-text text-transparent">Hidroponik</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                        Pelajari teknik budidaya hidroponik modern dengan panduan komprehensif dari para ahli
+                    </p>
+                </div>
+
+                <!-- Colorful Stats Cards -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-5xl mx-auto mb-8 edu-stats">
+                    <div
+                        class="bg-white/15 backdrop-blur-sm rounded-xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                        <div class="w-12 h-12 bg-edu-warm/30 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-play text-edu-warm text-xl"></i>
+                        </div>
+                        <div class="text-2xl lg:text-3xl font-bold text-white mb-1">500+</div>
+                        <div class="text-sm lg:text-base text-white/80 font-medium">Video Tutorial</div>
+                    </div>
+                    <div
+                        class="bg-white/15 backdrop-blur-sm rounded-xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                        <div
+                            class="w-12 h-12 bg-edu-accent/30 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-file-pdf text-edu-accent text-xl"></i>
+                        </div>
+                        <div class="text-2xl lg:text-3xl font-bold text-white mb-1">50+</div>
+                        <div class="text-sm lg:text-base text-white/80 font-medium">Panduan PDF</div>
+                    </div>
+                    <div
+                        class="bg-white/15 backdrop-blur-sm rounded-xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                        <div
+                            class="w-12 h-12 bg-edu-success/30 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-users text-edu-success text-xl"></i>
+                        </div>
+                        <div class="text-2xl lg:text-3xl font-bold text-white mb-1">10K+</div>
+                        <div class="text-sm lg:text-base text-white/80 font-medium">Siswa Aktif</div>
+                    </div>
+                    <div
+                        class="bg-white/15 backdrop-blur-sm rounded-xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                        <div class="w-12 h-12 bg-warning/30 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-trophy text-warning text-xl"></i>
+                        </div>
+                        <div class="text-2xl lg:text-3xl font-bold text-white mb-1">95%</div>
+                        <div class="text-sm lg:text-base text-white/80 font-medium">Tingkat Sukses</div>
+                    </div>
+                </div>
+
+                <!-- Colorful CTA -->
+                <div class="mt-8">
+                    <button onclick="scrollToContent()"
+                        class="bg-gradient-to-r from-edu-success to-accent text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-rocket mr-2"></i>Mulai Belajar Sekarang
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Colorful Filter Section -->
+    <div id="content-section" class="bg-gradient-to-r from-bg-gradient-start to-bg-gradient-end py-12 edu-filter">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-text-primary mb-4">
+                    <i class="fas fa-book-open text-edu-primary mr-3"></i>
+                    Materi Pembelajaran
+                </h2>
+                <p class="text-text-secondary text-lg max-w-2xl mx-auto">Pilih jalur pembelajaran sesuai dengan tingkat
+                    keahlian Anda</p>
+            </div>
+
+            <!-- Colorful Filter Tabs -->
+            <div class="flex flex-wrap gap-4 justify-center mb-8">
+                <button
+                    class="filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-edu-primary to-primary text-white shadow-lg hover:shadow-xl hover:scale-105 active"
+                    data-filter="all">
+                    <i class="fas fa-list mr-2 group-hover:animate-pulse"></i>
+                    <span>Semua Materi</span>
+                    <div class="absolute -top-1 -right-1 w-3 h-3 bg-edu-warm rounded-full animate-pulse"></div>
+                </button>
+                <button
+                    class="filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-white text-level-basic border-2 border-level-basic/30 hover:bg-level-basic hover:text-white hover:border-level-basic hover:shadow-lg hover:scale-105"
+                    data-filter="beginner">
+                    <i class="fas fa-seedling mr-2 group-hover:animate-bounce"></i>
+                    <span>Pemula</span>
+                    <span
+                        class="ml-2 px-2 py-1 text-xs bg-level-basic/20 text-level-basic rounded-full group-hover:bg-white/20 group-hover:text-white">Mudah</span>
+                </button>
+                <button
+                    class="filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-white text-level-intermediate border-2 border-level-intermediate/30 hover:bg-level-intermediate hover:text-white hover:border-level-intermediate hover:shadow-lg hover:scale-105"
+                    data-filter="intermediate">
+                    <i class="fas fa-leaf mr-2 group-hover:animate-bounce"></i>
+                    <span>Menengah</span>
+                    <span
+                        class="ml-2 px-2 py-1 text-xs bg-level-intermediate/20 text-level-intermediate rounded-full group-hover:bg-white/20 group-hover:text-white">Sedang</span>
+                </button>
+                <button
+                    class="filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-white text-level-advanced border-2 border-level-advanced/30 hover:bg-level-advanced hover:text-white hover:border-level-advanced hover:shadow-lg hover:scale-105"
+                    data-filter="advanced">
+                    <i class="fas fa-tree mr-2 group-hover:animate-bounce"></i>
+                    <span>Lanjutan</span>
+                    <span
+                        class="ml-2 px-2 py-1 text-xs bg-level-advanced/20 text-level-advanced rounded-full group-hover:bg-white/20 group-hover:text-white">Sulit</span>
+                </button>
+            </div>
+
+            <!-- Learning Progress Indicator -->
+            <div class="max-w-2xl mx-auto">
+                <div class="flex items-center justify-between text-sm text-text-muted mb-2">
+                    <span class="flex items-center">
+                        <i class="fas fa-chart-line text-edu-primary mr-2"></i>
+                        Progres Pembelajaran
+                    </span>
+                    <span id="progress-text" class="font-semibold text-edu-primary">0% Selesai</span>
+                </div>
+                <div class="w-full bg-white/50 rounded-full h-3 shadow-inner">
+                    <div id="progress-bar"
+                        class="bg-gradient-to-r from-level-basic via-level-intermediate to-level-advanced h-3 rounded-full transition-all duration-500 shadow-sm"
+                        style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Grid -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Video Tutorial 1 - Colorful Professional -->
+            <div class="content-item bg-white rounded-2xl shadow-lg border border-level-basic/20 hover:shadow-2xl hover:scale-105 transition-all duration-300 group overflow-hidden edu-card stagger-1"
+                data-category="beginner">
+                <div class="relative">
+                    <!-- Colorful Video Thumbnail -->
+                    <div class="aspect-video bg-gradient-to-br from-level-basic/20 via-edu-success/10 to-level-basic/30 flex items-center justify-center cursor-pointer relative overflow-hidden"
+                        onclick="playVideo('beginner-intro')">
+                        <div class="text-center z-10">
+                            <div class="relative">
+                                <div
+                                    class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                    <i
+                                        class="fas fa-play text-2xl text-level-basic group-hover:text-edu-success transition-colors duration-300"></i>
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-level-basic/20 rounded-full animate-ping opacity-0 group-hover:opacity-100">
+                                </div>
+                            </div>
+                            <p class="text-sm font-semibold text-level-basic bg-white/90 px-3 py-1 rounded-full">Video
+                                Tutorial Interaktif</p>
+                        </div>
+                        <!-- Animated Background Pattern -->
+                        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=" 60" height="60"
+                            viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" %3E%3Cg fill="none"
+                            fill-rule="evenodd" %3E%3Cg fill="%2322c55e" fill-opacity="0.1" %3E%3Ccircle cx="30" cy="30"
+                            r="2" /%3E%3Ccircle cx="10" cy="10" r="1" /%3E%3Ccircle cx="50" cy="50" r="1"
+                            /%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
+                    </div>
+
+                    <!-- Colorful Badges -->
+                    <div
+                        class="absolute top-3 right-3 bg-gradient-to-r from-level-basic to-edu-success text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                        <i class="fas fa-seedling mr-1"></i>Pemula
+                    </div>
+                    <div
+                        class="absolute top-3 left-3 bg-white/95 backdrop-blur-sm text-warning px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                        <i class="fas fa-star mr-1"></i>4.9
+                    </div>
+                    <div
+                        class="absolute bottom-3 left-3 bg-gradient-to-r from-edu-warm to-warning text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg animate-pulse">
+                        <i class="fas fa-gift mr-1"></i>GRATIS
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3
+                            class="text-xl font-bold text-text-primary group-hover:text-level-basic transition-colors leading-tight">
+                            Pengenalan Hidroponik untuk Pemula
+                        </h3>
+                        <div class="flex items-center ml-2">
+                            <div class="w-2 h-2 bg-level-basic rounded-full animate-pulse"></div>
+                        </div>
+                    </div>
+
+                    <p class="text-text-secondary mb-4 leading-relaxed">
+                        Mulai perjalanan hidroponik Anda dengan <span class="text-level-basic font-semibold">panduan
+                            step-by-step</span> yang mudah dipahami.
+                        Pelajari dasar-dasar sistem dan persiapan awal untuk <span
+                            class="text-edu-success font-semibold">kesuksesan pertama Anda</span>.
+                    </p>
+
+                    <!-- Enhanced Info Cards -->
+                    <div class="grid grid-cols-3 gap-2 mb-4">
+                        <div class="bg-edu-primary/10 rounded-lg p-2 text-center">
+                            <i class="fas fa-clock text-edu-primary text-sm mb-1"></i>
+                            <div class="text-xs font-semibold text-edu-primary">15 menit</div>
+                        </div>
+                        <div class="bg-edu-accent/10 rounded-lg p-2 text-center">
+                            <i class="fas fa-users text-edu-accent text-sm mb-1"></i>
+                            <div class="text-xs font-semibold text-edu-accent">1.2k siswa</div>
+                        </div>
+                        <div class="bg-edu-success/10 rounded-lg p-2 text-center">
+                            <i class="fas fa-certificate text-edu-success text-sm mb-1"></i>
+                            <div class="text-xs font-semibold text-edu-success">Sertifikat</div>
+                        </div>
+                    </div>
+
+                    <!-- Colorful Action Buttons -->
+                    <div class="flex gap-3">
+                        <button onclick="playVideo('beginner-intro')"
+                            class="flex-1 bg-gradient-to-r from-level-basic to-edu-success text-white px-4 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group/btn">
+                            <i class="fas fa-play mr-2 group-hover/btn:animate-bounce"></i>
+                            <span>Mulai Belajar</span>
+                        </button>
+                        <button onclick="bookmarkContent('beginner-intro')"
+                            class="bg-gradient-to-r from-edu-warm/20 to-warning/20 text-edu-warm hover:from-edu-warm hover:to-warning hover:text-white px-4 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
+                            <i class="fas fa-bookmark"></i>
+                        </button>
+                        <button onclick="shareContent('beginner-intro')"
+                            class="bg-gradient-to-r from-edu-accent/20 to-info/20 text-edu-accent hover:from-edu-accent hover:to-info hover:text-white px-4 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
+                            <i class="fas fa-share"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Tutorial 2 -->
+            <div class="content-item bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                data-category="beginner">
+                <div class="relative">
+                    <div
+                        class="aspect-video bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i class="fas fa-play-circle text-6xl mb-2 opacity-80"></i>
+                            <p class="text-sm">Video Tutorial</p>
+                        </div>
+                    </div>
+                    <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-medium">
+                        Pemula
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Menyiapkan Sistem NFT</h3>
+                    <p class="text-gray-600 mb-4">Tutorial lengkap membuat sistem Nutrient Film Technique (NFT)
+                        sederhana di rumah.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">
+                            <i class="fas fa-clock mr-1"></i>25 menit
+                        </span>
+                        <button
+                            class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-700">
+                            Tonton
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guide Article 1 -->
+            <div class="content-item bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                data-category="intermediate">
+                <div class="relative">
+                    <div
+                        class="aspect-video bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i class="fas fa-file-alt text-6xl mb-2 opacity-80"></i>
+                            <p class="text-sm">Panduan PDF</p>
+                        </div>
+                    </div>
+                    <div class="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded text-xs font-medium">
+                        Menengah
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Nutrisi dan pH Optimal</h3>
+                    <p class="text-gray-600 mb-4">Panduan lengkap mengatur nutrisi dan pH air untuk berbagai jenis
+                        tanaman hidroponik.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">
+                            <i class="fas fa-download mr-1"></i>PDF 2.5 MB
+                        </span>
+                        <button
+                            class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-700">
+                            Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Tutorial 3 -->
+            <div class="content-item bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                data-category="intermediate">
+                <div class="relative">
+                    <div
+                        class="aspect-video bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i class="fas fa-play-circle text-6xl mb-2 opacity-80"></i>
+                            <p class="text-sm">Video Tutorial</p>
+                        </div>
+                    </div>
+                    <div class="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded text-xs font-medium">
+                        Menengah
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Sistem Deep Water Culture</h3>
+                    <p class="text-gray-600 mb-4">Membangun dan mengoperasikan sistem DWC untuk hasil panen maksimal.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">
+                            <i class="fas fa-clock mr-1"></i>30 menit
+                        </span>
+                        <button
+                            class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-700">
+                            Tonton
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Content -->
+            <div class="content-item bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                data-category="advanced">
+                <div class="relative">
+                    <div
+                        class="aspect-video bg-gradient-to-br from-indigo-400 to-cyan-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i class="fas fa-play-circle text-6xl mb-2 opacity-80"></i>
+                            <p class="text-sm">Video Tutorial</p>
+                        </div>
+                    </div>
+                    <div class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded text-xs font-medium">
+                        Lanjutan
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Automasi Sistem Hidroponik</h3>
+                    <p class="text-gray-600 mb-4">Mengintegrasikan sensor dan kontrol otomatis untuk sistem hidroponik
+                        skala komersial.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">
+                            <i class="fas fa-clock mr-1"></i>45 menit
+                        </span>
+                        <button
+                            class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-700">
+                            Tonton
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More Content -->
+            <div class="content-item bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                data-category="beginner">
+                <div class="relative">
+                    <div
+                        class="aspect-video bg-gradient-to-br from-teal-400 to-green-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i class="fas fa-file-alt text-6xl mb-2 opacity-80"></i>
+                            <p class="text-sm">Panduan PDF</p>
+                        </div>
+                    </div>
+                    <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-medium">
+                        Pemula
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Checklist Harian Perawatan</h3>
+                    <p class="text-gray-600 mb-4">Daftar kegiatan harian yang perlu dilakukan untuk menjaga kesehatan
+                        tanaman hidroponik.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">
+                            <i class="fas fa-download mr-1"></i>PDF 1.2 MB
+                        </span>
+                        <button
+                            class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-700">
+                            Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="bg-white py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Pertanyaan Umum</h2>
+                <p class="text-xl text-gray-600">Jawaban untuk pertanyaan yang sering diajukan</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="border border-gray-200 rounded-lg">
+                    <button class="btn">
+                        <span class="font-semibold text-gray-900">Apa keuntungan hidroponik dibanding tanah?</span>
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Hidroponik memiliki beberapa keuntungan: pertumbuhan lebih cepat, hasil
+                            panen lebih besar, tidak memerlukan tanah, penggunaan air lebih efisien, dan bebas dari hama
+                            tanah.</p>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg">
+                    <button class="btn">
+                        <span class="font-semibold text-gray-900">Berapa modal awal untuk memulai hidroponik?</span>
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Modal awal bervariasi tergantung skala. Untuk sistem sederhana di
+                            rumah, Anda bisa memulai dengan Rp 500.000 - Rp 2.000.000. Sistem yang lebih besar
+                            memerlukan investasi Rp 5.000.000 ke atas.</p>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg">
+                    <button class="btn">
+                        <span class="font-semibold text-gray-900">Tanaman apa yang cocok untuk pemula?</span>
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Untuk pemula, disarankan memulai dengan sayuran berdaun seperti selada,
+                            kangkung, bayam, dan pakcoy. Tanaman ini relatif mudah dirawat dan cepat panen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">🌱 LABTANAM</h3>
+                    <p class="text-gray-400">Platform hidroponik terdepan untuk masa depan pertanian yang berkelanjutan.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Fitur</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="edukasi.html" class="hover:text-white">Edukasi</a></li>
+                        <li><a href="monitoring.html" class="hover:text-white">Monitoring</a></li>
+                        <li><a href="chatbot.html" class="hover:text-white">AI ChatBot</a></li>
+                        <li><a href="komunitas.html" class="hover:text-white">Komunitas</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Dukungan</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white">Panduan</a></li>
+                        <li><a href="#" class="hover:text-white">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 LABTANAM. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Navigation for Mobile -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white backdrop-blur-md border-t border-gray-100 shadow-xl md:hidden z-50"
+        id="bottom-nav">
+        <div class="flex justify-around items-center py-2">
+            <a href="index.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="index">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-home text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Beranda</span>
+            </a>
+            <a href="edukasi.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300 active"
+                data-page="edukasi">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-graduation-cap text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Edukasi</span>
+            </a>
+            <a href="monitoring.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="monitoring">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-chart-line text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Monitor</span>
+            </a>
+            <a href="chatbot.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="chatbot">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-robot text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">AI Chat</span>
+            </a>
+            <a href="komunitas.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="komunitas">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-users text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Komunitas</span>
+            </a>
+            <a href="produk.html"
+                class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300"
+                data-page="produk">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-shopping-bag text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Produk</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Animation Scripts -->
+    <script src="js/animations.js"></script>
+
+    <!-- Bottom Navigation -->
+    <script src="js/bottom-nav.js"></script>
+
+    <!-- Colorful Professional Styles -->
+    <style>
+        /* Enhanced animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceGentle {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes pulseSoft {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            33% {
+                transform: translateY(-10px) rotate(1deg);
+            }
+
+            66% {
+                transform: translateY(-5px) rotate(-1deg);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+            }
+
+            100% {
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.6);
+            }
+        }
+
+        /* Enhanced filter button animations */
+        .filter-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .filter-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Content card hover effects */
+        .content-item:hover .aspect-video {
+            transform: scale(1.02);
+        }
+
+        /* Progress bar animation */
+        #progress-bar {
+            position: relative;
+            overflow: hidden;
+        }
+
+        #progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(-45deg,
+                    rgba(255, 255, 255, 0.2) 25%,
+                    transparent 25%,
+                    transparent 50%,
+                    rgba(255, 255, 255, 0.2) 50%,
+                    rgba(255, 255, 255, 0.2) 75%,
+                    transparent 75%,
+                    transparent);
+            background-size: 50px 50px;
+            animation: move 2s linear infinite;
+        }
+
+        @keyframes move {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 50px 50px;
+            }
+        }
+
+        /* Pop-up Animations for Education Page */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px) scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.7) rotate(-10deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3) translateY(100px);
+            }
+
+            50% {
+                opacity: 0.8;
+                transform: scale(1.15) translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Staggered Animation Classes */
+        .stagger-1 {
+            animation-delay: 0.1s;
+        }
+
+        .stagger-2 {
+            animation-delay: 0.2s;
+        }
+
+        .stagger-3 {
+            animation-delay: 0.3s;
+        }
+
+        .stagger-4 {
+            animation-delay: 0.4s;
+        }
+
+        .stagger-5 {
+            animation-delay: 0.5s;
+        }
+
+        .stagger-6 {
+            animation-delay: 0.6s;
+        }
+
+        /* Education Content Cards Pop-up */
+        .edu-card {
+            animation: popIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation-fill-mode: both;
+        }
+
+        .edu-header {
+            animation: slideUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .edu-filter {
+            animation: scaleIn 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .edu-stats {
+            animation: fadeInUp 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        /* Bottom Navigation Styles */
+        .bottom-nav-item {
+            min-width: 60px;
+            position: relative;
+            color: #6b7280;
+        }
+
+        .bottom-nav-item.active {
+            color: #2563eb;
+        }
+
+        .bottom-nav-item.active .bottom-nav-icon-container {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .bottom-nav-item.active .bottom-nav-label {
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .bottom-nav-icon-container {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: transparent;
+        }
+
+        .bottom-nav-item:not(.active):hover .bottom-nav-icon-container {
+            background: #f3f4f6;
+            transform: translateY(-1px);
+        }
+
+        .bottom-nav-item:not(.active):hover {
+            color: #2563eb;
+        }
+
+        /* Active indicator */
+        .bottom-nav-item.active::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background: #2563eb;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(37, 99, 235, 0.6);
+        }
+
+        /* Body padding for bottom nav */
+        body {
+            padding-bottom: 80px;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding-bottom: 0;
+            }
+        }
+
+        /* Learning Progress Bar */
+        .progress-glow {
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+        }
+
+        /* Enhanced button hover effects */
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+    </style>
+
+    <script>
+        // Educational Content Controller
+        class EducationController {
+            constructor() {
+                this.completedContent = new Set();
+                this.currentFilter = 'all';
+                this.init();
+            }
+
+            init() {
+                this.setupFilterButtons();
+                this.setupFAQs();
+                this.setupProgressTracking();
+                this.loadUserProgress();
+            }
+
+            setupFilterButtons() {
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        this.handleFilterClick(e.target.closest('.filter-btn'));
+                    });
+                });
+            }
+
+            handleFilterClick(btn) {
+                // Update active button with smooth transition
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('active');
+                    // Reset to colorful default styles based on data-filter
+                    const filter = b.dataset.filter;
+                    if (filter === 'all') {
+                        b.className = 'filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-white text-edu-primary border-2 border-edu-primary/30 hover:bg-gradient-to-r hover:from-edu-primary hover:to-primary hover:text-white hover:shadow-lg hover:scale-105';
+                    } else if (filter === 'beginner') {
+                        b.className = 'filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-white text-level-basic border-2 border-level-basic/30 hover:bg-level-basic hover:text-white hover:border-level-basic hover:shadow-lg hover:scale-105';
+                    } else if (filter === 'intermediate') {
+                        b.className = 'filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-white text-level-intermediate border-2 border-level-intermediate/30 hover:bg-level-intermediate hover:text-white hover:border-level-intermediate hover:shadow-lg hover:scale-105';
+                    } else if (filter === 'advanced') {
+                        b.className = 'filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-white text-level-advanced border-2 border-level-advanced/30 hover:bg-level-advanced hover:text-white hover:border-level-advanced hover:shadow-lg hover:scale-105';
+                    }
+                });
+
+                // Set colorful active button
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                if (filter === 'all') {
+                    btn.className = 'filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-edu-primary to-primary text-white shadow-lg hover:shadow-xl hover:scale-105 active';
+                } else if (filter === 'beginner') {
+                    btn.className = 'filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-level-basic to-edu-success text-white shadow-lg hover:shadow-xl hover:scale-105 active';
+                } else if (filter === 'intermediate') {
+                    btn.className = 'filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-level-intermediate to-edu-accent text-white shadow-lg hover:shadow-xl hover:scale-105 active';
+                } else if (filter === 'advanced') {
+                    btn.className = 'filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-level-advanced to-edu-secondary text-white shadow-lg hover:shadow-xl hover:scale-105 active';
+                }
+
+                this.currentFilter = filter;
+                this.filterContent(filter);
+            }
+
+            filterContent(filter) {
+                const items = document.querySelectorAll('.content-item');
+                let visibleCount = 0;
+
+                items.forEach((item, index) => {
+                    const category = item.dataset.category;
+                    const shouldShow = filter === 'all' || category === filter;
+
+                    if (shouldShow) {
+                        item.style.display = 'block';
+                        item.style.animationDelay = `${index * 0.1}s`;
+                        item.classList.add('fade-in-up');
+                        visibleCount++;
+                    } else {
+                        item.style.display = 'none';
+                        item.classList.remove('fade-in-up');
+                    }
+                });
+
+                // Update progress bar based on visible content
+                this.updateProgressDisplay();
+            }
+
+            setupFAQs() {
+                // Fix FAQ selectors - the buttons don't have faq-btn class
+                document.querySelectorAll('.border.border-gray-200 button').forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        const content = this.parentElement.querySelector('.faq-content');
+                        const icon = this.querySelector('i.fa-chevron-down, i.fa-chevron-up');
+
+                        if (content && icon) {
+                            if (content.classList.contains('hidden')) {
+                                content.classList.remove('hidden');
+                                icon.classList.remove('fa-chevron-down');
+                                icon.classList.add('fa-chevron-up');
+                            } else {
+                                content.classList.add('hidden');
+                                icon.classList.remove('fa-chevron-up');
+                                icon.classList.add('fa-chevron-down');
+                            }
+                        }
+                    });
+                });
+            }
+
+            setupProgressTracking() {
+                // Load completed content from localStorage
+                const saved = localStorage.getItem('labtanam-education-progress');
+                if (saved) {
+                    this.completedContent = new Set(JSON.parse(saved));
+                }
+                this.updateProgressDisplay();
+            }
+
+            updateProgressDisplay() {
+                const totalContent = document.querySelectorAll('.content-item').length;
+                const completedCount = this.completedContent.size;
+                const percentage = totalContent > 0 ? Math.round((completedCount / totalContent) * 100) : 0;
+
+                const progressBar = document.getElementById('progress-bar');
+                const progressText = document.getElementById('progress-text');
+
+                if (progressBar && progressText) {
+                    progressBar.style.width = `${percentage}%`;
+                    progressText.textContent = `${percentage}% Selesai`;
+
+                    if (percentage > 50) {
+                        progressBar.classList.add('progress-glow');
+                    }
+                }
+            }
+
+            loadUserProgress() {
+                // Mark completed content
+                this.completedContent.forEach(contentId => {
+                    const element = document.querySelector(`[data-content-id="${contentId}"]`);
+                    if (element) {
+                        element.classList.add('completed');
+                    }
+                });
+            }
+
+            saveProgress() {
+                localStorage.setItem('labtanam-education-progress', JSON.stringify([...this.completedContent]));
+            }
+        }
+
+        // Content Interaction Functions
+        function playVideo(contentId) {
+            // Add to completed content
+            if (window.educationController) {
+                window.educationController.completedContent.add(contentId);
+                window.educationController.saveProgress();
+                window.educationController.updateProgressDisplay();
+            }
+
+            // Show success feedback
+            showNotification('Video dimulai! 🎥', 'success');
+
+            // In a real app, this would open a video player
+            console.log('Playing video:', contentId);
+        }
+
+        function bookmarkContent(contentId) {
+            showNotification('Konten disimpan ke bookmark! 📚', 'info');
+            console.log('Bookmarked:', contentId);
+        }
+
+        function shareContent(contentId) {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'LABTANAM - Edukasi Hidroponik',
+                    text: 'Lihat konten pembelajaran hidroponik yang menarik ini!',
+                    url: window.location.href
+                });
+            } else {
+                // Fallback
+                navigator.clipboard.writeText(window.location.href);
+                showNotification('Link disalin ke clipboard! 🔗', 'success');
+            }
+        }
+
+        function scrollToContent() {
+            document.querySelector('#content-section').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg text-white transform translate-x-full transition-transform duration-300`;
+
+            if (type === 'success') {
+                notification.classList.add('bg-success');
+            } else if (type === 'info') {
+                notification.classList.add('bg-info');
+            } else {
+                notification.classList.add('bg-gray-600');
+            }
+
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            // Animate in
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            window.educationController = new EducationController();
+        });
+    </script>
+</body>
+
+</html>
