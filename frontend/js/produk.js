@@ -6,6 +6,7 @@ const products = [
         price: 45000,
         rating: 4.9,
         imageIcon: "fas fa-flask",
+        image: "assets/nutrisi-ab-mix.png",
         color: "blue",
         category: "Nutrisi"
     },
@@ -16,6 +17,7 @@ const products = [
         price: 125000,
         rating: 4.8,
         imageIcon: "fas fa-thermometer-half",
+        image: "assets/ph-meter-digital.png",
         color: "green",
         category: "Alat Ukur"
     },
@@ -26,6 +28,7 @@ const products = [
         price: 850000,
         rating: 4.9,
         imageIcon: "fas fa-seedling",
+        image: "assets/design-produk.jpg",
         color: "purple",
         category: "Kit Hidroponik"
     },
@@ -36,6 +39,7 @@ const products = [
         price: 320000,
         rating: 4.7,
         imageIcon: "fas fa-sun",
+        image: "assets/led-grow-light.png",
         color: "yellow",
         category: "Pencahayaan"
     },
@@ -46,6 +50,7 @@ const products = [
         price: 25000,
         rating: 4.8,
         imageIcon: "fas fa-cube",
+        image: "assets/rockwool-cubes.png",
         color: "gray",
         category: "Media Tanam"
     },
@@ -56,6 +61,7 @@ const products = [
         price: 65000,
         rating: 4.6,
         imageIcon: "fas fa-water",
+        image: "assets/pompa-submersible.png",
         color: "cyan",
         category: "Peralatan"
     },
@@ -66,6 +72,7 @@ const products = [
         price: 15000,
         rating: 4.9,
         imageIcon: "fas fa-filter",
+        image: "assets/netpot-5cm.png",
         color: "red",
         category: "Aksesoris"
     },
@@ -76,6 +83,7 @@ const products = [
         price: 10000,
         rating: 5.0,
         imageIcon: "fas fa-leaf",
+        image: "assets/benih-selada.png",
         color: "green",
         category: "Benih"
     }
@@ -114,11 +122,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const bgGradient = colorMap[product.color] || 'from-gray-500 to-gray-600';
 
+        // Determine if product has an image
+        const hasImage = product.image && product.image.length > 0;
+
         card.innerHTML = `
             <div>
-                <div class="w-16 h-16 bg-gradient-to-br ${bgGradient} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-md">
-                    <i class="${product.imageIcon} text-white text-2xl"></i>
-                </div>
+                ${hasImage ?
+                `<div class="w-full h-40 mb-4 rounded-xl overflow-hidden shadow-md group-hover:scale-105 transition-transform">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover">
+                    </div>` :
+                `<div class="w-16 h-16 bg-gradient-to-br ${bgGradient} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-md">
+                        <i class="${product.imageIcon} text-white text-2xl"></i>
+                    </div>`
+            }
                 <div class="text-xs font-semibold text-gray-400 mb-1 uppercase tracking-wide">${product.category}</div>
                 <h3 class="font-bold text-gray-800 text-lg mb-2 group-hover:text-primary transition-colors">${product.name}</h3>
                 <p class="text-gray-500 text-sm mb-4">${product.description}</p>
